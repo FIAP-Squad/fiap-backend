@@ -10,11 +10,6 @@ spec:
   selector:
     matchLabels:
       db: mongodb
-  strategy:
-    rollingUpdate:
-      maxSurge: 1
-      maxUnavailable: 1
-    type: RollingUpdate
   template:
     metadata:
       labels:
@@ -44,8 +39,8 @@ spec:
             cpu: "250m"
             memory: "250Mi"
           limits:
-            cpu: "500m"
-            memory: "500Mi"
+            cpu: "400m"
+            memory: "400Mi"
         livenessProbe:
           tcpSocket:
             port: 27017
