@@ -1,0 +1,10 @@
+# connecting to mongodb
+apt install -y mongodb-clients
+mongo -u admin -p admin 10.101.236.50/admin
+show dbs
+show profiles
+use dbtest
+db.user.insert({name: "Ada Lovelace", age: 205})
+show dbs
+db
+db.user.find({name: "Ada Lovelace"})

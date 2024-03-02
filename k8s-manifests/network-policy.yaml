@@ -1,0 +1,22 @@
+kind: NetworkPolicy
+apiVersion: networking.k8s.io/v1
+metadata:
+  name: mongodb-allow-backend
+  namespace: app
+spec:
+  podSelector:
+    matchLabels:
+      db: mongodb
+  policyTypes:
+  - Ingress
+  ingress:
+    - from:
+      - namespaceSelector:
+          matchLabels:
+            network: app
+        podSelector:           
+          matchLabels:
+            app: backend
+      ports:
+      - protocol: TCP
+        port: 27017
