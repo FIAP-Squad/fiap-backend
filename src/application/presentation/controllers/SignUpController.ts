@@ -14,7 +14,7 @@ import {
   type IHTTPRequest,
   type IHTTPResponse
 } from '@/core/ports/driving/presentation'
-import { EmailInUse } from '../errors'
+import { EmailInUse } from '@/application/presentation/errors'
 
 export class SignUpController implements IController {
   constructor (

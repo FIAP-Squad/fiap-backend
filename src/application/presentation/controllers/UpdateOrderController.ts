@@ -4,7 +4,7 @@ import {
   type IValidation,
   type IHTTPRequest
 } from '@/core/ports/driving/presentation'
-import { badRequest, noContent, serverError } from '../helpers'
+import { badRequest, noContent, serverError } from '@/application/presentation/helpers'
 import { type IUpdateOrder } from '@/core/ports/driving/services'
 
 export class UpdateOrderController implements IController {
