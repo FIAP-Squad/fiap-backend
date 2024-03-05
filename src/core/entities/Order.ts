@@ -6,7 +6,6 @@ export type Item = {
 }
 
 export type Order = {
-  number: number
   customer: string
   status: string
   createdAt: Date

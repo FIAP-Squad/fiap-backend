@@ -6,7 +6,7 @@ import { type Collection } from 'mongodb'
 import env from '@/main/config/env'
 import { setupApp } from '@/main/config/app'
 import { MongoDBHelper } from '@/infrastructure/repositories/mongodb'
-import { type AddOrderParams } from '@/core/ports/driving/services'
+import { type Order } from '@/core/entities'
 
 let orderCollection: Collection
 let accountCollection: Collection
@@ -14,7 +14,7 @@ const MONGO_URL = process.env.MONGO_URL || ''
 
 let app: Express
 
-const mockAddOrderParams = (): AddOrderParams => ({
+const mockAddOrderParams = (): Order => ({
   customer: 'any_customer',
   products: [
     {
@@ -75,7 +75,7 @@ describe('Order Routes', () => {
         .post('/api/orders')
         .set('authorization', `Bearer ${accessToken}`)
         .send(mockAddOrderParams())
-        .expect(204)
+        .expect(200)
     })
   })
 

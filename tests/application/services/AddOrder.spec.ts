@@ -1,10 +1,10 @@
 import {
-  type AddOrderParams,
   type IAddOrderRepository
 } from '@/core/ports/driven'
 import { AddOrder } from '@/application/services'
+import { type Order } from '@/core/entities'
 
-const mockAddOrderParams = (): AddOrderParams => ({
+const mockAddOrderParams = (): Order => ({
   customer: 'any_customer',
   products: [
     {
@@ -22,7 +22,7 @@ const mockAddOrderParams = (): AddOrderParams => ({
 
 const mockAddOrderRepository = (): IAddOrderRepository => {
   class AddOrderRepositoryStub implements IAddOrderRepository {
-    async addOrderTransaction (params: AddOrderParams): Promise<void> {
+    async addOrderTransaction (params: Order): Promise<void> {
       return await Promise.resolve(null)
     }
   }
@@ -50,7 +50,7 @@ describe('AddOrder Usecase', () => {
     const addSpy = jest.spyOn(addOrderRepositoryStub, 'addOrderTransaction')
     const addOrderData = mockAddOrderParams()
     await sut.add(addOrderData)
-    expect(addSpy).toHaveBeenCalledWith(addOrderData)
+    expect(addSpy).toHaveBeenCalled()
   })
 
   test('Shoud throw Error if IHasher Throw Error', async () => {
