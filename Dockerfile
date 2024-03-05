@@ -7,9 +7,10 @@ FROM base as build
 WORKDIR /usr/src/nodejs-api-ddd
 COPY . .
 COPY --from=base /usr/src/nodejs-api-ddd/node_modules ./node_modules
-RUN tsc
+RUN npm run build
 
 FROM base as prod
 WORKDIR /usr/src/nodejs-api-ddd
 COPY --from=build /usr/src/nodejs-api-ddd/dist ./dist
+EXPOSE 5050
 CMD ["node", "dist/main/server.js"]
