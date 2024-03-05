@@ -49,10 +49,8 @@ export class OrderMongoRepository implements
 
   async loadAll (filter: any): Promise<Order[]> {
     const collection = MongoDBHelper.getCollection('orders')
-    const orders = await collection.aggregate<Order>([
-      {
-        $match: filter
-      },
+    const orders = await collection.aggregate([
+      { $match: filter },
       {
         $lookup: {
           from: 'orderItems',
@@ -75,12 +73,49 @@ export class OrderMongoRepository implements
         }
       },
       {
+        $match: {
+          status: {
+            $nin: ['Finalizado']
+          }
+        }
+      },
+      {
+        $addFields: {
+          relevance: {
+            $cond: {
+              if: { $eq: ['$status', 'Pronto'] },
+              then: 3,
+              else: {
+                $cond: {
+                  if: { $eq: ['$status', 'Em Preparação'] },
+                  then: 2,
+                  else: {
+                    $cond: {
+                      if: { $eq: ['$status', 'Recebido'] },
+                      then: 1,
+                      else: 0
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      {
+        $sort: {
+          relevance: -1,
+          createdAt: 1
+        }
+      },
+      {
         $project: {
-          'items._id': 0 // Alterado para 'items'
+          'items._id': 0,
+          relevance: 0
         }
       }
-    ]
-    ).toArray()
+    ]).toArray()
+
     return orders.map(orders => MongoDBHelper.map(orders))
   }
 }
