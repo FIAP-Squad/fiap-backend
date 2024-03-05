@@ -4,9 +4,10 @@ import { type Order } from '@/core/entities'
 
 export class AddOrder implements IAddOrder {
   constructor (private readonly repository: IAddOrderRepository) { }
-  async add (params: Order): Promise<void> {
+  async add (params: Order): Promise<string> {
     const code = this.setOrderId()
-    return await this.repository.addOrderTransaction({ ...params, code })
+    await this.repository.addOrderTransaction({ ...params, code })
+    return code
   }
 
   private setOrderId (): string {

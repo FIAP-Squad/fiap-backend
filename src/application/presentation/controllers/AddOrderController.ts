@@ -3,7 +3,7 @@ import {
   type IController,
   type IValidation
 } from '@/core/ports/driving/presentation'
-import { badRequest, noContent, serverError } from '../helpers'
+import { badRequest, ok, serverError } from '../helpers'
 import { type IAddOrder } from '@/core/ports/driving/services/IAddOrder'
 
 export class AddOrderController implements IController {
@@ -16,8 +16,8 @@ export class AddOrderController implements IController {
     try {
       const error = this.validation.validate(request.body)
       if (error) return badRequest(error)
-      await this.addOrder.add(request.body)
-      return noContent()
+      const code = await this.addOrder.add(request.body)
+      return ok({ code })
     } catch (error) { return serverError(error) }
   }
 }

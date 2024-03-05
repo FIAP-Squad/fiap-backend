@@ -5,5 +5,5 @@ export type AddOrderItemParams = Item & { orderId: ObjectId }
 export type AddOrderDetailsParams = Omit<Order, 'orderId' | 'products'>
 
 export interface IAddOrder {
-  add: (params: Order) => Promise<void>
+  add: (params: Order) => Promise<string>
 }

@@ -3,7 +3,7 @@ import {
   type IHTTPRequest
 } from '@/core/ports/driving/presentation'
 import { AddOrderController } from '@/application/presentation/controllers'
-import { badRequest, noContent, serverError } from '@/application/presentation/helpers'
+import { badRequest, ok, serverError } from '@/application/presentation/helpers'
 import { type IAddOrder } from '@/core/ports/driving/services/IAddOrder'
 import { type Order } from '@/core/entities'
 
@@ -38,8 +38,8 @@ const mockValidation = (): IValidation => {
 
 const mockAddOrder = (): IAddOrder => {
   class AddOrderStub implements IAddOrder {
-    async add (order: Order): Promise<void> {
-      return await Promise.resolve(null)
+    async add (order: Order): Promise<string> {
+      return await Promise.resolve('any_order_code')
     }
   }
   return new AddOrderStub()
@@ -63,7 +63,7 @@ const mockSut = (): SutTypes => {
 }
 
 describe('AddOrderController', () => {
-  test('Should call IAddOrder Usecase with a correct values ', async () => {
+  test('Should call IAddOrder Usecase with a correct values', async () => {
     const { sut, validationStub } = mockSut()
     const validationSpy = jest.spyOn(validationStub, 'validate')
     const request = mockRequest()
@@ -97,6 +97,6 @@ describe('AddOrderController', () => {
   test('Should return 500 if IAddProduct throws', async () => {
     const { sut } = mockSut()
     const response = await sut.handle(mockRequest())
-    expect(response).toEqual(noContent())
+    expect(response).toEqual(ok({ code: 'any_order_code' }))
   })
 })

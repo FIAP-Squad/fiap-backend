@@ -75,7 +75,7 @@ describe('Order Routes', () => {
         .post('/api/orders')
         .set('authorization', `Bearer ${accessToken}`)
         .send(mockAddOrderParams())
-        .expect(204)
+        .expect(200)
     })
   })
 
