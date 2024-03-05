@@ -5,12 +5,12 @@ import { type Order } from '@/core/entities'
 export class AddOrder implements IAddOrder {
   constructor (private readonly repository: IAddOrderRepository) { }
   async add (params: Order): Promise<string> {
-    const code = this.setOrderId()
+    const code = this._setOrderCode()
     await this.repository.addOrderTransaction({ ...params, code })
     return code
   }
 
-  private setOrderId (): string {
+  private _setOrderCode (): string {
     const dateTimeNow = new Date()
     const character = String.fromCharCode(65 + Math.floor(Math.random() * 26))
     const day = String(dateTimeNow.getDate())[0]
