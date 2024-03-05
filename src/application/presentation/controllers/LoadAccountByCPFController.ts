@@ -10,11 +10,11 @@ import {
 } from '@/core/ports/driving/presentation'
 
 export class LoadAccountByCPFController implements IController {
-  constructor (private readonly loadAccountByCpf: ILoadAccountByCPF) { }
+  constructor (private readonly _loadAccountByCpf: ILoadAccountByCPF) { }
   async handle (request: any): Promise<IHTTPResponse> {
     try {
       const { cpf } = request.params
-      const account = await this.loadAccountByCpf.loadByCpf(cpf)
+      const account = await this._loadAccountByCpf.loadByCpf(cpf)
       if (!account) return notFound()
       return ok(account)
     } catch (error) {
