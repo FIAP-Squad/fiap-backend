@@ -2,8 +2,8 @@ import { type IValidation } from '@/core/ports/driving/presentation'
 import { MissingParam } from '@/application/presentation/errors'
 
 export class RequiredFieldsValidation implements IValidation {
-  constructor (private readonly fieldName: string) { }
+  constructor (private readonly _field: string) { }
   validate (input: any): Error {
-    if (!input[this.fieldName]) return new MissingParam(this.fieldName)
+    if (!input[this._field]) return new MissingParam(this._field)
   }
 }

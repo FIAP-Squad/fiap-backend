@@ -3,8 +3,8 @@ import { type ILoadOrders } from '@/core/ports/driving/services'
 import { type ILoadOrdersRepository } from '@/core/ports/driven'
 
 export class LoadOrders implements ILoadOrders {
-  constructor (private readonly repository: ILoadOrdersRepository) { }
+  constructor (private readonly _repository: ILoadOrdersRepository) { }
   async loadAll (filter: any): Promise<Order[]> {
-    return await this.repository.loadAll(filter)
+    return await this._repository.loadAll(filter)
   }
 }

@@ -4,15 +4,15 @@ import { type IDecrypter, type ILoadAccountByTokenRepository } from '@/core/port
 
 export class LoadAccountByToken implements ILoadAccountByToken {
   constructor (
-    private readonly decrypt: IDecrypter,
-    private readonly repository: ILoadAccountByTokenRepository
+    private readonly _decrypt: IDecrypter,
+    private readonly _repository: ILoadAccountByTokenRepository
   ) { }
 
   async load (accessToken: string, role?: string): Promise<Account> {
     let token: string
-    try { token = await this.decrypt.decrypt(accessToken) } catch (error) { return null }
+    try { token = await this._decrypt.decrypt(accessToken) } catch (error) { return null }
     if (token) {
-      const account = await this.repository.loadByToken(accessToken, role)
+      const account = await this._repository.loadByToken(accessToken, role)
       if (account) return account
     }
     return null

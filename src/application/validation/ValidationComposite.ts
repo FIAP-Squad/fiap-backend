@@ -1,9 +1,9 @@
 import { type IValidation } from '@/core/ports/driving/presentation'
 
 export class ValidationComposite implements IValidation {
-  constructor (private readonly validations: IValidation[]) { }
+  constructor (private readonly _validations: IValidation[]) { }
   validate (input: any): Error {
-    for (const validation of this.validations) {
+    for (const validation of this._validations) {
       const error = validation.validate(input)
       if (error) return error
     }

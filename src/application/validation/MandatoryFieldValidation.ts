@@ -2,10 +2,10 @@ import { type IValidation } from '@/core/ports/driving/presentation'
 import { MissingField } from '@/application/presentation/errors'
 
 export class MandatoryFieldValidation implements IValidation {
-  constructor (private readonly fieldNames: string[]) { }
+  constructor (private readonly _fields: string[]) { }
   validate (input: any): Error {
-    const missingFields = this.fieldNames.filter(fieldName => !input[fieldName])
-    const fields = String(this.fieldNames.join(', '))
-    if (missingFields.length === this.fieldNames.length) return new MissingField(fields)
+    const missingFields = this._fields.filter(field => !input[field])
+    const fields = String(this._fields.join(', '))
+    if (missingFields.length === this._fields.length) return new MissingField(fields)
   }
 }

@@ -9,11 +9,11 @@ import {
 } from '@/core/ports/driving/presentation'
 
 export class DeleteProductController implements IController {
-  constructor (private readonly _deleteProduct: IDeleteProduct) { }
+  constructor (private readonly _usecase: IDeleteProduct) { }
   async handle (request: any): Promise<IHTTPResponse> {
     try {
       const { id } = request.params
-      await this._deleteProduct.delete(id)
+      await this._usecase.delete(id)
       return noContent()
     } catch (error) {
       return serverError(error)

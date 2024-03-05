@@ -3,11 +3,11 @@ import { type IValidation } from '@/core/ports/driving/presentation'
 
 export class CompareFieldsValidation implements IValidation {
   constructor (
-    private readonly field: string,
-    private readonly fieldToCompare: string
+    private readonly _field: string,
+    private readonly _fieldToCompare: string
   ) { }
 
   validate (input: any): Error {
-    if (input[this.field] !== input[this.fieldToCompare]) return new InvalidParam(this.fieldToCompare)
+    if (input[this._field] !== input[this._fieldToCompare]) return new InvalidParam(this._fieldToCompare)
   }
 }

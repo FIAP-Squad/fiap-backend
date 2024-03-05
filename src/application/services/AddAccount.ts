@@ -8,16 +8,16 @@ import {
 
 export class AddAccount implements IAddAccount {
   constructor (
-    private readonly hasher: IHasher,
-    private readonly addRepository: IAddAccountRepository,
-    private readonly loadRepository: ILoadAccountByEmailRepository
+    private readonly _hasher: IHasher,
+    private readonly _addRepository: IAddAccountRepository,
+    private readonly _loadRepository: ILoadAccountByEmailRepository
   ) { }
 
   async add (params: AddAccountParams): Promise<Account> {
-    const account = await this.loadRepository.loadByEmail(params.email)
+    const account = await this._loadRepository.loadByEmail(params.email)
     if (!account) {
-      const hashedPassword = await this.hasher.hash(params.password)
-      return await this.addRepository.add(Object.assign({}, params, { password: hashedPassword }))
+      const hashedPassword = await this._hasher.hash(params.password)
+      return await this._addRepository.add(Object.assign({}, params, { password: hashedPassword }))
     }
     return null
   }

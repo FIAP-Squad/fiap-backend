@@ -2,9 +2,9 @@ import { type IHasher, type IHashComparer } from '@/core/ports/driven'
 import bcrypt from 'bcrypt'
 
 export class BcryptAdapter implements IHasher, IHashComparer {
-  constructor (private readonly salt: number) { }
+  constructor (private readonly _salt: number) { }
   async hash (value: string): Promise<string> {
-    return await bcrypt.hash(value, this.salt)
+    return await bcrypt.hash(value, this._salt)
   }
 
   async compare (value: string, hash: string): Promise<boolean> {

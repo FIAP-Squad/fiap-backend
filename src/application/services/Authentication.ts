@@ -8,19 +8,19 @@ import {
 
 export class Authentication implements IAuthentication {
   constructor (
-    private readonly loadRepository: ILoadAccountByEmailRepository,
-    private readonly hashComparer: IHashComparer,
-    private readonly encrypter: IEncrypter,
-    private readonly updateRepository: IUpdateAccessTokenRepository
+    private readonly _loadRepository: ILoadAccountByEmailRepository,
+    private readonly _hashComparer: IHashComparer,
+    private readonly _encrypter: IEncrypter,
+    private readonly _updateRepository: IUpdateAccessTokenRepository
   ) { }
 
   async auth (params: AuthenticationParams): Promise<string> {
-    const account = await this.loadRepository.loadByEmail(params.email)
+    const account = await this._loadRepository.loadByEmail(params.email)
     if (account) {
-      const isValid = await this.hashComparer.compare(params.password, account.password)
+      const isValid = await this._hashComparer.compare(params.password, account.password)
       if (isValid) {
-        const accessToken = await this.encrypter.encrypt(account.id)
-        await this.updateRepository.updateAccessToken(account.id, accessToken)
+        const accessToken = await this._encrypter.encrypt(account.id)
+        await this._updateRepository.updateAccessToken(account.id, accessToken)
         return accessToken
       }
     }

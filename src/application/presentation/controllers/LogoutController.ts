@@ -4,16 +4,16 @@ import { badRequest, noContent, serverError } from '@/application/presentation/h
 
 export class LogoutController implements IController {
   constructor (
-    private readonly validation: IValidation,
-    private readonly repository: ILogout
+    private readonly _validation: IValidation,
+    private readonly _repository: ILogout
   ) { }
 
   async handle (request: any): Promise<IHTTPResponse> {
     try {
-      const error = this.validation.validate(request.body)
+      const error = this._validation.validate(request.body)
       if (error) return badRequest(error)
       const { email } = request.body
-      await this.repository.logout(email)
+      await this._repository.logout(email)
       return noContent()
     } catch (error) {
       return serverError(error)

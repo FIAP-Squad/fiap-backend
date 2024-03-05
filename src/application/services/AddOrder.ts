@@ -3,10 +3,10 @@ import { type IAddOrderRepository } from '@/core/ports/driven'
 import { type Order } from '@/core/entities'
 
 export class AddOrder implements IAddOrder {
-  constructor (private readonly repository: IAddOrderRepository) { }
+  constructor (private readonly _repository: IAddOrderRepository) { }
   async add (params: Order): Promise<string> {
     const code = this._setOrderCode()
-    await this.repository.addOrderTransaction({ ...params, code })
+    await this._repository.addOrderTransaction({ ...params, code })
     return code
   }
 
