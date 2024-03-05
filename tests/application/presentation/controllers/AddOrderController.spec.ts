@@ -4,9 +4,10 @@ import {
 } from '@/core/ports/driving/presentation'
 import { AddOrderController } from '@/application/presentation/controllers'
 import { badRequest, noContent, serverError } from '@/application/presentation/helpers'
-import { type IAddOrder, type AddOrderParams } from '@/core/ports/driving/services/IAddOrder'
+import { type IAddOrder } from '@/core/ports/driving/services/IAddOrder'
+import { type Order } from '@/core/entities'
 
-const mockAddOrderParams = (): AddOrderParams => ({
+const mockAddOrderParams = (): Order => ({
   customer: 'any_customer',
   products: [
     {
@@ -37,7 +38,7 @@ const mockValidation = (): IValidation => {
 
 const mockAddOrder = (): IAddOrder => {
   class AddOrderStub implements IAddOrder {
-    async add (order: AddOrderParams): Promise<void> {
+    async add (order: Order): Promise<void> {
       return await Promise.resolve(null)
     }
   }

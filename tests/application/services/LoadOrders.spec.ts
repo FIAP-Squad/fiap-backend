@@ -5,7 +5,6 @@ import { LoadOrders } from '@/application/services'
 
 const mockOrders = (): Order[] => ([
   {
-    number: 1,
     customer: 'any_customer',
     products: [
       {
@@ -21,7 +20,6 @@ const mockOrders = (): Order[] => ([
     amount: 4000
   },
   {
-    number: 2,
     customer: 'other_customer',
     products: [
       {

@@ -1,15 +1,16 @@
 import { type Order } from '@/core/entities'
+import { type OrderWithCode } from '@/core/ports/driven'
 import {
   type AddOrderItemParams,
-  type AddOrderDetailsParams,
-  type AddOrderParams
+  type AddOrderDetailsParams
 } from '@/core/ports/driving/services'
 import { MongoDBHelper, OrderMongoRepository } from '@/infrastructure/repositories'
 import { ObjectId, type Collection } from 'mongodb'
 
 const mockSut = (): OrderMongoRepository => new OrderMongoRepository()
 
-const mockAddOrderParams = (): AddOrderParams => ({
+const mockAddOrderParams = (): OrderWithCode => ({
+  code: 'any_code',
   customer: 'any_customer',
   products: [
     {

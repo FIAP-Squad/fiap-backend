@@ -6,7 +6,6 @@ import { noContent, serverError } from '@/application/presentation/helpers'
 
 const mockOrders = (): Order[] => ([
   {
-    number: 1,
     customer: 'any_customer',
     products: [
       {

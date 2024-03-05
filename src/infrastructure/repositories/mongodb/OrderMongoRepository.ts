@@ -2,13 +2,13 @@ import { type Order } from '@/core/entities'
 import {
   type UpdateOrderParams,
   type AddOrderDetailsParams,
-  type AddOrderItemParams,
-  type AddOrderParams
+  type AddOrderItemParams
 } from '@/core/ports/driving/services'
 import {
   type IUpdateOrderRepository,
   type IAddOrderRepository,
-  type ILoadOrdersRepository
+  type ILoadOrdersRepository,
+  type OrderWithCode
 } from '@/core/ports/driven'
 import { MongoDBHelper } from '@/infrastructure/repositories'
 import { ObjectId } from 'mongodb'
@@ -17,7 +17,7 @@ export class OrderMongoRepository implements
   IAddOrderRepository,
   IUpdateOrderRepository,
   ILoadOrdersRepository {
-  async addOrderTransaction (params: AddOrderParams): Promise<void> {
+  async addOrderTransaction (params: OrderWithCode): Promise<void> {
     const session = await MongoDBHelper.startTransaction()
     try {
       const { products, ...order } = params
