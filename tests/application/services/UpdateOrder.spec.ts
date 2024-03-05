@@ -3,7 +3,7 @@ import { type IUpdateOrderRepository } from '@/core/ports/driven'
 import { type UpdateOrderParams } from '@/core/ports/driving/services'
 
 const mockUpdateParams = (): UpdateOrderParams => ({
-  id: 'any_id',
+  code: 'any_code',
   status: 'any_status'
 })
 

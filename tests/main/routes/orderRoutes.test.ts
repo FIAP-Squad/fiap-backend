@@ -25,8 +25,7 @@ const mockAddOrderParams = (): Order => ({
     }
   ],
   status: 'any_status',
-  createdAt: new Date(),
-  updatedAt: new Date(),
+  createdAt: new Date().getTime(),
   amount: 4000
 })
 

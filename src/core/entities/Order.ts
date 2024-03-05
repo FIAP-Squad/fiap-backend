@@ -8,8 +8,7 @@ export type Item = {
 export type Order = {
   customer: string
   status: string
-  createdAt: Date
-  updatedAt: Date
+  createdAt: number
   amount: number
   products: Item[]
 }

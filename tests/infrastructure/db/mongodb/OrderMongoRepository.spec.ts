@@ -27,8 +27,7 @@ const mockAddOrderParams = (): OrderWithCode => ({
     }
   ],
   status: 'any_status',
-  createdAt: new Date(),
-  updatedAt: new Date(),
+  createdAt: new Date().getTime(),
   amount: 4000
 })
 
@@ -43,8 +42,7 @@ const mockOrderItemParams = (): AddOrderItemParams => ({
 const mockAddOrderDetailsParams = (): AddOrderDetailsParams => ({
   customer: 'any_customer',
   status: 'any_status',
-  createdAt: new Date(),
-  updatedAt: new Date(),
+  createdAt: new Date().getTime(),
   amount: 4000
 })
 
@@ -99,11 +97,11 @@ describe('OrderRepository', () => {
   })
 
   describe('addOrderTransaction()', () => {
-    test('Should delete a product on success', async () => {
+    test('Should update a product on success', async () => {
       const response = await ordersCollection.insertOne(mockAddOrderParams())
       const insertedId = response.insertedId.toHexString()
       const sut = mockSut()
-      await sut.updateOrder({ id: String(insertedId), status: 'updated_status' })
+      await sut.updateOrder({ code: 'any_code', status: 'updated_status' })
       const order = await ordersCollection.findOne<Order>({ _id: new ObjectId(insertedId) })
       expect(order.status).toBe('updated_status')
     })

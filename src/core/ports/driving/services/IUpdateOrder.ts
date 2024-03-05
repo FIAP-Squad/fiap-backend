@@ -1,5 +1,5 @@
 export type UpdateOrderParams = {
-  id: string
+  code: string
   status: string
 }
 

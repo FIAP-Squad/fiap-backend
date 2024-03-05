@@ -6,7 +6,8 @@ export class AddOrder implements IAddOrder {
   constructor (private readonly _repository: IAddOrderRepository) { }
   async add (params: Order): Promise<string> {
     const code = this._setOrderCode()
-    await this._repository.addOrderTransaction({ ...params, code })
+    const createdAt = this._setCurrentDateTime()
+    await this._repository.addOrderTransaction({ code, createdAt, ...params })
     return code
   }
 
@@ -19,5 +20,9 @@ export class AddOrder implements IAddOrder {
     const second = String(dateTimeNow.getSeconds())[0]
     const milli = String(dateTimeNow.getMilliseconds())[0]
     return `${character}${day}${hour}${minute}${second}${milli}`.toString()
+  }
+
+  private _setCurrentDateTime (): number {
+    return new Date().getTime()
   }
 }

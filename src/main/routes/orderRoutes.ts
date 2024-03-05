@@ -6,5 +6,5 @@ import { makeAddOrderController, makeUpdateOrderController, makeLoadOrdersContro
 export default (router: Router): void => {
   router.post('/orders', auth, adaptRoute(makeAddOrderController()))
   router.get('/orders', auth, adaptRoute(makeLoadOrdersController()))
-  router.patch('/orders/:id', auth, adaptRoute(makeUpdateOrderController()))
+  router.patch('/orders/:code', auth, adaptRoute(makeUpdateOrderController()))
 }

@@ -8,7 +8,7 @@ describe('Add Order IValidation Factory', () => {
   test('Should call validation with all validations ', () => {
     makeAddOrderValidation()
     const validations: IValidation[] = []
-    for (const field of ['customer', 'products', 'status', 'createdAt', 'updatedAt', 'amount']) {
+    for (const field of ['customer', 'products', 'status', 'amount']) {
       validations.push(new RequiredFieldsValidation(field))
     }
     expect(ValidationComposite).toHaveBeenCalledWith(validations)

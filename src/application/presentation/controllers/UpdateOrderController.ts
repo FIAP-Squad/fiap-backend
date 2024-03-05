@@ -17,9 +17,9 @@ export class UpdateOrderController implements IController {
     try {
       const error = this._validation.validate(request.body)
       if (error) return badRequest(error)
-      const { id } = request.params
+      const { code } = request.params
       const { status } = request.body
-      await this._usecase.update({ id, status })
+      await this._usecase.update({ code, status })
       return noContent()
     } catch (error) {
       return serverError(error)

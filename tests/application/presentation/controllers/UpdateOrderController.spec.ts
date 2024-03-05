@@ -11,7 +11,7 @@ import {
 
 const mockRequest = (): IHTTPRequest => ({
   params: {
-    id: 'any_id'
+    code: 'any_code'
   },
   body: {
     status: 'any_status'
@@ -74,7 +74,7 @@ describe('IUpdateOrder IController', () => {
     const updateSpy = jest.spyOn(updateOrderStub, 'update')
     await sut.handle(mockRequest())
     expect(updateSpy).toHaveBeenCalledWith({
-      id: 'any_id',
+      code: 'any_code',
       status: 'any_status'
     })
   })
