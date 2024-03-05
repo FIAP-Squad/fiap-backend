@@ -13,16 +13,16 @@ import {
 
 export class AddProductController implements IController {
   constructor (
-    private readonly validation: IValidation,
-    private readonly addProduct: IAddProduct
+    private readonly _validation: IValidation,
+    private readonly _addProduct: IAddProduct
   ) { }
 
   async handle (request: IHTTPRequest): Promise<IHTTPResponse> {
     try {
-      const error = this.validation.validate(request.body)
+      const error = this._validation.validate(request.body)
       if (error) return badRequest(error)
       const { category, name, price, description, image } = request.body
-      await this.addProduct.add({ category, name, price, description, image })
+      await this._addProduct.add({ category, name, price, description, image })
       return noContent()
     } catch (error) {
       return serverError(error)
