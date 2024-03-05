@@ -8,3 +8,7 @@ db.user.insert({name: "Ada Lovelace", age: 205})
 show dbs
 db
 db.user.find({name: "Ada Lovelace"})
+
+# connecting to eks mongodb-service
+kubectl port-forward svc/mongodb-service 27017:27017 -n app
+mongosh -u admin -p admin localhost/admin
