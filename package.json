@@ -67,6 +67,6 @@
     "node": "v18.x"
   },
   "_moduleAliases": {
-    "@": "src"
+    "@": "dist"
   }
 }
