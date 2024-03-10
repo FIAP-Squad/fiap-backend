@@ -1,4 +1,4 @@
-import { noContent } from '@/application/presentation/helpers'
+import { created } from '@/application/presentation/helpers'
 import { PaymentNotificationController } from '@/application/presentation/controllers'
 
 type SutTypes = {
@@ -16,6 +16,6 @@ describe('PaymentNotificationController', () => {
   test('Should be ', async () => {
     const { sut } = mockSut()
     const response = await sut.handle()
-    expect(response).toEqual(noContent())
+    expect(response).toEqual(created())
   })
 })
