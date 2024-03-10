@@ -1,5 +1,5 @@
 import { type ILoadProducts } from '@/core/ports/driving/services'
-import { LoadProducts } from '@/application/services'
+import { LoadProducts } from '@/application/usecases'
 import { ProductMongoRepository } from '@/infrastructure/repositories/mongodb'
 
 export const makeDbLoadProducts = (): ILoadProducts => {

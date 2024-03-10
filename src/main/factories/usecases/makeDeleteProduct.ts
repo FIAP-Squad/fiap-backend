@@ -1,4 +1,4 @@
-import { DeleteProduct } from '@/application/services'
+import { DeleteProduct } from '@/application/usecases'
 import { type IDeleteProduct } from '@/core/ports/driving/services'
 import { ProductMongoRepository } from '@/infrastructure/repositories/mongodb'
 

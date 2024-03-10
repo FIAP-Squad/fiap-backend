@@ -1,4 +1,4 @@
-import { Authentication } from '@/application/services'
+import { Authentication } from '@/application/usecases'
 import { type Account } from '@/core/entities'
 import { type AuthenticationParams } from '@/core/ports/driving/services'
 import {

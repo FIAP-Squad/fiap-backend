@@ -1,4 +1,4 @@
-import { AddAccount } from '@/application/services'
+import { AddAccount } from '@/application/usecases'
 import { type AddAccountParams } from '@/core/ports/driving/services'
 import { type Account } from '@/core/entities'
 import {

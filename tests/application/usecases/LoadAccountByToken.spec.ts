@@ -1,5 +1,5 @@
 import { type Account } from '@/core/entities'
-import { LoadAccountByToken } from '@/application/services'
+import { LoadAccountByToken } from '@/application/usecases'
 import {
   type IDecrypter,
   type ILoadAccountByTokenRepository

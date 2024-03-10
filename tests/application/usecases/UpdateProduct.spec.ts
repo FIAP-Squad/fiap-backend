@@ -2,7 +2,7 @@ import {
   type UpdateProductParams,
   type IUpdateProductRepository
 } from '@/core/ports/driven'
-import { UpdateProduct } from '@/application/services'
+import { UpdateProduct } from '@/application/usecases'
 
 const updateParams = (): UpdateProductParams => ({
   body: {

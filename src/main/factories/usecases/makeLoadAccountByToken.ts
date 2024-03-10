@@ -1,6 +1,6 @@
 import env from '@/main/config/env'
 import { type ILoadAccountByToken } from '@/core/ports/driving/services'
-import { LoadAccountByToken } from '@/application/services'
+import { LoadAccountByToken } from '@/application/usecases'
 import { JwtAdapter } from '@/infrastructure/criptography'
 import { AccountMongoRepository } from '@/infrastructure/repositories/mongodb'
 

@@ -1,4 +1,4 @@
-import { LoadProducts } from '@/application/services'
+import { LoadProducts } from '@/application/usecases'
 import { type Product } from '@/core/entities'
 import { type ILoadProducts } from '@/core/ports/driving/services'
 import { type ILoadProductsRepository } from '@/core/ports/driven'

@@ -1,5 +1,5 @@
 import { type IDeleteProductRepository } from '@/core/ports/driven'
-import { DeleteProduct } from '@/application/services'
+import { DeleteProduct } from '@/application/usecases'
 
 const mockDeleteProductRepository = (): IDeleteProductRepository => {
   class DeleteProductRepositoryStub implements IDeleteProductRepository {

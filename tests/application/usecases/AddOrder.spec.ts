@@ -1,7 +1,7 @@
 import {
   type IAddOrderRepository
 } from '@/core/ports/driven'
-import { AddOrder } from '@/application/services'
+import { AddOrder } from '@/application/usecases'
 import { type Order } from '@/core/entities'
 
 const mockAddOrderParams = (): Order => ({

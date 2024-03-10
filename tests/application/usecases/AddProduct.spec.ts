@@ -1,4 +1,4 @@
-import { AddProduct } from '@/application/services'
+import { AddProduct } from '@/application/usecases'
 import { type AddProductParams } from '@/core/ports/driving/services'
 import { type IAddProductRepository } from '@/core/ports/driven'
 
