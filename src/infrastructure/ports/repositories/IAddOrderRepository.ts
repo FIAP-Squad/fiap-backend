@@ -1,4 +1,4 @@
-import { type Order } from '@/domain/entities'
+import { type Order } from '@/domain/types'
 
 export type OrderWithCode = Order & { code: string }
 

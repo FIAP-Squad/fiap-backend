@@ -1,4 +1,4 @@
-import { type Account } from '@/domain/entities'
+import { type Account } from '@/domain/types'
 import { LoadAccountByToken } from '@/application/usecases'
 import {
   type IDecrypter,

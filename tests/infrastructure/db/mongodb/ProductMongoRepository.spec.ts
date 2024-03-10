@@ -1,5 +1,5 @@
 import { type Collection } from 'mongodb'
-import { type Product } from '@/domain/entities'
+import { type Product } from '@/domain/types'
 import { type AddProductParams } from '@/application/usecases/ports'
 import {
   MongoDBHelper,

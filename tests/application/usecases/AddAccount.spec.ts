@@ -1,6 +1,6 @@
 import { AddAccount } from '@/application/usecases'
 import { type AddAccountParams } from '@/application/usecases/ports'
-import { type Account } from '@/domain/entities'
+import { type Account } from '@/domain/types'
 import {
   type IHasher,
   type IAddAccountRepository,

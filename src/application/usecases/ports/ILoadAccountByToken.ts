@@ -1,4 +1,4 @@
-import { type Account } from '@/domain/entities'
+import { type Account } from '@/domain/types'
 
 export interface ILoadAccountByToken {
   load: (accessToken: string, role?: string) => Promise<Account>

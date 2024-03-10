@@ -1,4 +1,4 @@
-import { type Account } from '@/domain/entities'
+import { type Account } from '@/domain/types'
 
 export interface ILoadAccountByEmailRepository {
   loadByEmail: (email: string) => Promise<Account>

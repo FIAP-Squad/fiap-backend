@@ -1,5 +1,5 @@
 import { type ILoadProducts } from '@/application/usecases/ports'
-import { type Product } from '@/domain/entities'
+import { type Product } from '@/domain/types'
 import { type ILoadProductsRepository } from '@/infrastructure/ports/repositories'
 
 export class LoadProducts implements ILoadProducts {

@@ -1,5 +1,5 @@
 import { LoadProductById } from '@/application/usecases'
-import { type Product } from '@/domain/entities'
+import { type Product } from '@/domain/types'
 import { type ILoadProductByIdRepository } from '@/infrastructure/ports'
 
 const mockProduct = (): Product => ({

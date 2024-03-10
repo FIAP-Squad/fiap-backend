@@ -5,7 +5,7 @@ import {
 import { AddOrderController } from '@/application/presentation/controllers'
 import { badRequest, ok, serverError } from '@/application/presentation/helpers'
 import { type IAddOrder } from '@/application/usecases/ports/IAddOrder'
-import { type Order } from '@/domain/entities'
+import { type Order } from '@/domain/types'
 
 const mockAddOrderParams = (): Order => ({
   customer: 'any_customer',

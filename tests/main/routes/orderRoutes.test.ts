@@ -6,7 +6,7 @@ import { type Collection } from 'mongodb'
 import env from '@/main/config/env'
 import { setupApp } from '@/main/config/app'
 import { MongoDBHelper } from '@/infrastructure/repositories/mongodb'
-import { type Order } from '@/domain/entities'
+import { type Order } from '@/domain/types'
 
 let orderCollection: Collection
 let accountCollection: Collection
