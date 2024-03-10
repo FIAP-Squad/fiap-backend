@@ -1,5 +1,5 @@
 import { LoadProducts } from '@/application/usecases'
-import { type Product } from '@/domain/types'
+import { type Product } from '@/domain/entities'
 import { type ILoadProducts } from '@/application/usecases/ports'
 import { type ILoadProductsRepository } from '@/infrastructure/ports'
 

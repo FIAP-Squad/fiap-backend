@@ -1,4 +1,4 @@
-import { type Product } from '@/domain/types'
+import { type Product } from '@/domain/entities'
 import { type ILoadProductById } from '@/application/usecases/ports'
 import { type ILoadProductByIdRepository } from '@/infrastructure/ports'
 

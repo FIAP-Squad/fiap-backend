@@ -1,4 +1,4 @@
-import { type Account } from '@/domain/types'
+import { type Account } from '@/domain/entities'
 import { type ILoadAccountByCPF } from '@/application/usecases/ports'
 import { type ILoadAccountByCPFRepository } from '@/infrastructure/ports'
 

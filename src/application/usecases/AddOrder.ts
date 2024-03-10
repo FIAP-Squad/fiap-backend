@@ -1,6 +1,6 @@
 import { type IAddOrder } from '@/application/usecases/ports'
 import { type IAddOrderRepository } from '@/infrastructure/ports'
-import { type Order } from '@/domain/types'
+import { type Order } from '@/domain/entities'
 
 export class AddOrder implements IAddOrder {
   constructor (private readonly _repository: IAddOrderRepository) { }

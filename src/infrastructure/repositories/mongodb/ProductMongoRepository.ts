@@ -1,6 +1,6 @@
 import { ObjectId } from 'mongodb'
 import { MongoDBHelper } from '.'
-import { type Product } from '@/domain/types'
+import { type Product } from '@/domain/entities'
 import { type AddProductParams } from '@/application/usecases/ports'
 import {
   type IAddProductRepository,

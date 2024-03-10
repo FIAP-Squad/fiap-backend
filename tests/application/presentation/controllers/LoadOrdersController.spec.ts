@@ -1,4 +1,4 @@
-import { type Order } from '@/domain/types'
+import { type Order } from '@/domain/entities'
 import { type ILoadOrders } from '@/application/usecases/ports'
 import { type IHTTPRequest } from '@/application/presentation/ports'
 import { LoadOrdersController } from '@/application/presentation/controllers'

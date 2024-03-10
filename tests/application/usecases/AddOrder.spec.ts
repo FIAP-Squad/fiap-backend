@@ -2,7 +2,7 @@ import {
   type IAddOrderRepository
 } from '@/infrastructure/ports'
 import { AddOrder } from '@/application/usecases'
-import { type Order } from '@/domain/types'
+import { type Order } from '@/domain/entities'
 
 const mockAddOrderParams = (): Order => ({
   customer: 'any_customer',

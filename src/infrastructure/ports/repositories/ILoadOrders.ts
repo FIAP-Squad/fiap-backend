@@ -1,4 +1,4 @@
-import { type Order } from '@/domain/types'
+import { type Order } from '@/domain/entities'
 
 export interface ILoadOrdersRepository {
   loadAll: (filter: any) => Promise<Order[]>
