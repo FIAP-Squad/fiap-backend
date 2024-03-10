@@ -4,16 +4,16 @@ import { setupApp } from '@/main/config/app'
 
 let app: Express
 
-describe('payment routes', () => {
+describe('Payment routes', () => {
   beforeAll(async () => {
     app = setupApp()
   })
 
-  describe('POST /payment-notification', () => {
-    test('Should return 201 on payment-notification without access token', async () => {
+  describe('POST /notification', () => {
+    test('Should return 200 on notification without access token', async () => {
       await request(app)
-        .post('/api/payment-notification')
-        .expect(201)
+        .post('/api/notification')
+        .expect(200)
     })
   })
 })

@@ -10,11 +10,6 @@ export const ok = (data: any): IHTTPResponse => ({
   body: data
 })
 
-export const created = (): IHTTPResponse => ({
-  statusCode: 201,
-  body: null
-})
-
 export const noContent = (): IHTTPResponse => ({
   statusCode: 204,
   body: null
