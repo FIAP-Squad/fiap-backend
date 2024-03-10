@@ -1,6 +1,6 @@
 import { type Product } from '@/domain/entities'
-import { type ILoadProductById } from '@/domain/interfaces/driving/services'
-import { type IHTTPRequest } from '@/domain/interfaces/driving/presentation'
+import { type ILoadProductById } from '@/domain/interfaces/driving/usecases'
+import { type IHTTPRequest } from '@/application/presentation/ports'
 import { LoadProductByIdController } from '@/application/presentation/controllers'
 import {
   noContent,

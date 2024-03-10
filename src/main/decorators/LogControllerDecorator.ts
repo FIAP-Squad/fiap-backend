@@ -3,7 +3,7 @@ import {
   type IController,
   type IHTTPRequest,
   type IHTTPResponse
-} from '@/domain/interfaces/driving/presentation'
+} from '@/application/presentation/ports'
 
 export class LogControllerDecorator implements IController {
   constructor (

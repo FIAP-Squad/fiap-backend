@@ -1,4 +1,4 @@
-import { type ILogout } from '@/domain/interfaces/driving/services'
+import { type ILogout } from '@/domain/interfaces/driving/usecases'
 import { Logout } from '@/application/usecases'
 import { AccountMongoRepository } from '@/infrastructure/repositories'
 

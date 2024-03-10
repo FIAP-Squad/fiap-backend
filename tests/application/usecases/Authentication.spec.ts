@@ -1,6 +1,6 @@
 import { Authentication } from '@/application/usecases'
 import { type Account } from '@/domain/entities'
-import { type AuthenticationParams } from '@/domain/interfaces/driving/services'
+import { type AuthenticationParams } from '@/domain/interfaces/driving/usecases'
 import {
   type IEncrypter,
   type IHashComparer,

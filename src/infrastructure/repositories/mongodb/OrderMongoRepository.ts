@@ -3,7 +3,7 @@ import {
   type UpdateOrderParams,
   type AddOrderDetailsParams,
   type AddOrderItemParams
-} from '@/domain/interfaces/driving/services'
+} from '@/domain/interfaces/driving/usecases'
 import {
   type IUpdateOrderRepository,
   type IAddOrderRepository,

@@ -1,5 +1,5 @@
 import { type Account } from '@/domain/entities'
-import { type ILoadAccountByToken } from '@/domain/interfaces/driving/services'
+import { type ILoadAccountByToken } from '@/domain/interfaces/driving/usecases'
 import { type IDecrypter, type ILoadAccountByTokenRepository } from '@/domain/interfaces/driven'
 
 export class LoadAccountByToken implements ILoadAccountByToken {

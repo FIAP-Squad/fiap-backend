@@ -1,6 +1,6 @@
 import { makeDbDeleteProduct } from '@/main/factories/usecases/'
 import { makeLogControllerDecorator } from '@/main/factories/decorators'
-import { type IController } from '@/domain/interfaces/driving/presentation'
+import { type IController } from '@/application/presentation/ports'
 import { DeleteProductController } from '@/application/presentation/controllers'
 
 export const makeDeleteProductController = (): IController => {

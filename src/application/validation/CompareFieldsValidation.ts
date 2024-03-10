@@ -1,5 +1,5 @@
 import { InvalidParam } from '@/application/presentation/errors'
-import { type IValidation } from '@/domain/interfaces/driving/presentation'
+import { type IValidation } from '@/application/presentation/ports'
 
 export class CompareFieldsValidation implements IValidation {
   constructor (

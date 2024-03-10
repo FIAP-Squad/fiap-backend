@@ -1,9 +1,9 @@
 import {
   type IAuthentication, type AuthenticationParams
-} from '@/domain/interfaces/driving/services'
+} from '@/domain/interfaces/driving/usecases'
 import {
   type IHTTPRequest, type IValidation
-} from '@/domain/interfaces/driving/presentation'
+} from '@/application/presentation/ports'
 import { LoginController } from '@/application/presentation/controllers'
 import { MissingParam } from '@/application/presentation/errors'
 import {

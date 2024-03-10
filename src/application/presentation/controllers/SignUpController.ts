@@ -1,7 +1,7 @@
 import {
   type IAddAccount,
   type IAuthentication
-} from '@/domain/interfaces/driving/services'
+} from '@/domain/interfaces/driving/usecases'
 import {
   ok,
   forbidden,
@@ -13,7 +13,7 @@ import {
   type IValidation,
   type IHTTPRequest,
   type IHTTPResponse
-} from '@/domain/interfaces/driving/presentation'
+} from '@/application/presentation/ports'
 import { EmailInUse } from '@/application/presentation/errors'
 
 export class SignUpController implements IController {

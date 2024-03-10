@@ -1,4 +1,4 @@
-import { type ILogout } from '@/domain/interfaces/driving/services'
+import { type ILogout } from '@/domain/interfaces/driving/usecases'
 import { type IDeleteAccessTokenRepository } from '@/domain/interfaces/driven'
 
 export class Logout implements ILogout {

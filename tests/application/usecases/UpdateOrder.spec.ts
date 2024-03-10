@@ -1,6 +1,6 @@
 import { UpdateOrder } from '@/application/usecases'
 import { type IUpdateOrderRepository } from '@/domain/interfaces/driven'
-import { type UpdateOrderParams } from '@/domain/interfaces/driving/services'
+import { type UpdateOrderParams } from '@/domain/interfaces/driving/usecases'
 
 const mockUpdateParams = (): UpdateOrderParams => ({
   code: 'any_code',

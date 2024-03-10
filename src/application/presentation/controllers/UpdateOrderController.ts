@@ -3,9 +3,9 @@ import {
   type IController,
   type IValidation,
   type IHTTPRequest
-} from '@/domain/interfaces/driving/presentation'
+} from '@/application/presentation/ports'
 import { badRequest, noContent, serverError } from '@/application/presentation/helpers'
-import { type IUpdateOrder } from '@/domain/interfaces/driving/services'
+import { type IUpdateOrder } from '@/domain/interfaces/driving/usecases'
 
 export class UpdateOrderController implements IController {
   constructor (

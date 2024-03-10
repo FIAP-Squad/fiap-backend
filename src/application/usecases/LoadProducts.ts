@@ -1,4 +1,4 @@
-import { type ILoadProducts } from '@/domain/interfaces/driving/services'
+import { type ILoadProducts } from '@/domain/interfaces/driving/usecases'
 import { type Product } from '@/domain/entities'
 import { type ILoadProductsRepository } from '@/domain/interfaces/driven/repositories'
 

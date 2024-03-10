@@ -2,9 +2,9 @@ import {
   type IHTTPResponse,
   type IController,
   type IValidation
-} from '@/domain/interfaces/driving/presentation'
+} from '@/application/presentation/ports'
 import { badRequest, ok, serverError } from '@/application/presentation/helpers'
-import { type IAddOrder } from '@/domain/interfaces/driving/services/IAddOrder'
+import { type IAddOrder } from '@/domain/interfaces/driving/usecases'
 
 export class AddOrderController implements IController {
   constructor (

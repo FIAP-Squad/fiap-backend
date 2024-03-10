@@ -1,5 +1,5 @@
 import { type Order } from '@/domain/entities'
-import { type ILoadOrders } from '@/domain/interfaces/driving/services'
+import { type ILoadOrders } from '@/domain/interfaces/driving/usecases'
 import { type ILoadOrdersRepository } from '@/domain/interfaces/driven'
 import { LoadOrders } from '@/application/usecases'
 

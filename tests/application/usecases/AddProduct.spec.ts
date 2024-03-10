@@ -1,5 +1,5 @@
 import { AddProduct } from '@/application/usecases'
-import { type AddProductParams } from '@/domain/interfaces/driving/services'
+import { type AddProductParams } from '@/domain/interfaces/driving/usecases'
 import { type IAddProductRepository } from '@/domain/interfaces/driven'
 
 const mockAddProductParams = (): AddProductParams => ({

@@ -1,7 +1,7 @@
 import {
   type UpdateOrderParams,
   type IUpdateOrder
-} from '@/domain/interfaces/driving/services'
+} from '@/domain/interfaces/driving/usecases'
 import { type IUpdateOrderRepository } from '@/domain/interfaces/driven'
 
 export class UpdateOrder implements IUpdateOrder {

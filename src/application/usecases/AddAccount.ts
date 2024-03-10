@@ -1,5 +1,5 @@
 import { type Account } from '@/domain/entities'
-import { type AddAccountParams, type IAddAccount } from '@/domain/interfaces/driving/services'
+import { type AddAccountParams, type IAddAccount } from '@/domain/interfaces/driving/usecases'
 import {
   type IHasher,
   type IAddAccountRepository,

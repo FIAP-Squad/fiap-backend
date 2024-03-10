@@ -1,4 +1,4 @@
-import { type ILoadProductById } from '@/domain/interfaces/driving/services'
+import { type ILoadProductById } from '@/domain/interfaces/driving/usecases'
 import { LoadProductById } from '@/application/usecases'
 import { ProductMongoRepository } from '@/infrastructure/repositories/mongodb'
 

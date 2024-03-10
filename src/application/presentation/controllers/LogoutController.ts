@@ -1,5 +1,5 @@
-import { type ILogout } from '@/domain/interfaces/driving/services'
-import { type IHTTPResponse, type IController, type IValidation } from '@/domain/interfaces/driving/presentation'
+import { type ILogout } from '@/domain/interfaces/driving/usecases'
+import { type IHTTPResponse, type IController, type IValidation } from '@/application/presentation/ports'
 import { badRequest, noContent, serverError } from '@/application/presentation/helpers'
 
 export class LogoutController implements IController {

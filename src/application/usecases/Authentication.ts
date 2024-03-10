@@ -1,4 +1,4 @@
-import { type IAuthentication, type AuthenticationParams } from '@/domain/interfaces/driving/services'
+import { type IAuthentication, type AuthenticationParams } from '@/domain/interfaces/driving/usecases'
 import {
   type IHashComparer,
   type ILoadAccountByEmailRepository,

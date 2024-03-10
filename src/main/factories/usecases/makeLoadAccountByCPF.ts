@@ -1,4 +1,4 @@
-import { type ILoadAccountByCPF } from '@/domain/interfaces/driving/services'
+import { type ILoadAccountByCPF } from '@/domain/interfaces/driving/usecases'
 import { LoadACcountByCPF } from '@/application/usecases'
 import { AccountMongoRepository } from '@/infrastructure/repositories/mongodb'
 

@@ -1,5 +1,5 @@
 import { DeleteProduct } from '@/application/usecases'
-import { type IDeleteProduct } from '@/domain/interfaces/driving/services'
+import { type IDeleteProduct } from '@/domain/interfaces/driving/usecases'
 import { ProductMongoRepository } from '@/infrastructure/repositories/mongodb'
 
 export const makeDbDeleteProduct = (): IDeleteProduct => {

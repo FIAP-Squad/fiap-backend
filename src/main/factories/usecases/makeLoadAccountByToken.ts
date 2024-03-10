@@ -1,5 +1,5 @@
 import env from '@/main/config/env'
-import { type ILoadAccountByToken } from '@/domain/interfaces/driving/services'
+import { type ILoadAccountByToken } from '@/domain/interfaces/driving/usecases'
 import { LoadAccountByToken } from '@/application/usecases'
 import { JwtAdapter } from '@/infrastructure/criptography'
 import { AccountMongoRepository } from '@/infrastructure/repositories/mongodb'

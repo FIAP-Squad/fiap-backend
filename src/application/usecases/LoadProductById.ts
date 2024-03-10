@@ -1,5 +1,5 @@
 import { type Product } from '@/domain/entities'
-import { type ILoadProductById } from '@/domain/interfaces/driving/services'
+import { type ILoadProductById } from '@/domain/interfaces/driving/usecases'
 import { type ILoadProductByIdRepository } from '@/domain/interfaces/driven'
 
 export class LoadProductById implements ILoadProductById {

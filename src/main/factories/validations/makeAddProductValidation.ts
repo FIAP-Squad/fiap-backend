@@ -1,5 +1,5 @@
 import { RequiredFieldsValidation, ValidationComposite } from '@/application/validation'
-import { type IValidation } from '@/domain/interfaces/driving/presentation'
+import { type IValidation } from '@/application/presentation/ports'
 
 export const makeAddProductValidation = (): IValidation => {
   const validations: IValidation[] = []

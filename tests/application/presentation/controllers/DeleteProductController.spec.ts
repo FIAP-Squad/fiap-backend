@@ -1,5 +1,5 @@
-import { type IDeleteProduct } from '@/domain/interfaces/driving/services'
-import { type IHTTPRequest } from '@/domain/interfaces/driving/presentation'
+import { type IDeleteProduct } from '@/domain/interfaces/driving/usecases'
+import { type IHTTPRequest } from '@/application/presentation/ports'
 import { DeleteProductController } from '@/application/presentation/controllers'
 import {
   serverError,

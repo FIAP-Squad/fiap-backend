@@ -2,7 +2,7 @@ import { type ILogErrorRepository } from '@/domain/interfaces/driven'
 import {
   type IController,
   type IHTTPRequest, type IHTTPResponse
-} from '@/domain/interfaces/driving/presentation'
+} from '@/application/presentation/ports'
 import { serverError } from '@/application/presentation/helpers'
 import { LogControllerDecorator } from '@/main/decorators'
 

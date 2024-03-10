@@ -1,4 +1,4 @@
-import { type IDeleteProduct } from '@/domain/interfaces/driving/services'
+import { type IDeleteProduct } from '@/domain/interfaces/driving/usecases'
 import {
   noContent,
   serverError
@@ -6,7 +6,7 @@ import {
 import {
   type IController,
   type IHTTPResponse
-} from '@/domain/interfaces/driving/presentation'
+} from '@/application/presentation/ports'
 
 export class DeleteProductController implements IController {
   constructor (private readonly _usecase: IDeleteProduct) { }
