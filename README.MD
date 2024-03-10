@@ -1,10 +1,40 @@
-<h1 align="center">
-    <p>TECH CHALLENGE FIAP - FASE 1</p>
-</h1>
-<p align="center">Arquitetura Hexagonal e Domain-Driven Design - CRUD</p>
+<p align="center">
+  <img src="./public/fiap_postech_logo_442x174.jpeg" alt="Faculdade FIAP - Log">
+</p>
+<h3 align="center">
+    <p>Software Architecture</p>
+</h3>
+<h3 align="center">
+    <p>Grupo 9</p>
+</h3>
+<p align="center">
+<a href="https://www.linkedin.com/in/edelvandrof/">
+  <img src="https://img.shields.io/badge/-edelvandrof-blue?style=flat-square&logo=Linkedin&logoColor=white" alt="Linkedin: edelvandrof">
+</a>
+<a href="https://www.linkedin.com/in/evelyncid/">
+  <img src="https://img.shields.io/badge/-evelyncid-blue?style=flat-square&logo=Linkedin&logoColor=white" alt="Linkedin: evelyncid">
+</a>
+<a href="https://www.linkedin.com/in/gabrielsilva-oliveira/">
+  <img src="https://img.shields.io/badge/-gabrielsilva--oliveira-blue?style=flat-square&logo=Linkedin&logoColor=white" alt="Linkedin: gabrielsilva-oliveira">
+</a>
+<a href="https://www.linkedin.com/in/gabriel-rodrigues-f/">
+  <img src="https://img.shields.io/badge/-gabriel--rodrigues--f-blue?style=flat-square&logo=Linkedin&logoColor=white" alt="Linkedin: gabriel-rodrigues-f">
+</a>
+<a href="https://www.linkedin.com/in/ramon-m-715b764a/">
+  <img src="https://img.shields.io/badge/-ramon--m-blue?style=flat-square&logo=Linkedin&logoColor=white" alt="Linkedin: ramon-m">
+</a>
+</p>
+<h3 align="center">
+    <p>API de Gestão de Pedidos de Restaurante</p>
+</h3>
+<p align="center">Clean Architecture e Kubernetes</p>
 
-Tópicos
+### Tópicos
 =================
+   * [Descrição do projeto](#descrição-do-projeto)
+   * [Objetivo](#objetivo)
+   * [Entregáveis do projeto](#entregáveis-do-projeto)
+   * [Requisitos funcionais](#requisitos-funcionais)
    * [Tecnologias](#tecnologias)
       * [Tecnologias utilizadas no projeto](#tecnologias-utilizadas-no-projeto)
    * [Serviços](#serviços)
@@ -15,23 +45,65 @@ Tópicos
       * [Docker](#docker)
    * [Execute os teste](#execute-os-testes)
 
+### Descrição do projeto
+<div style="text-align: justify">Este projeto engloba o design da arquitetura, a criação da API e o seu deployment utilizando containers e orquestradores, visando proporcionar a um restaurante a possibilidade de gerir seus pedidos de lanches. Ele foi desenvolvido como parte de um trabalho de conclusão para obtenção do título de especialização em Arquitetura de Software. A API permite a criação, atualização, visualização e cancelamento de pedidos e foi projetada para ser robusta, escalável e de fácil manutenção.</div>
 
-##  Tecnologias 
+### Objetivo
+<div style="text-align: justify">O objetivo deste projeto é demonstrar a aplicação prática dos princípios e padrões de Arquitetura de Software na criação e deployment de uma API de gestão de pedidos de um restaurante. Visa melhorar a eficiência operacional e a experiência do cliente ao gerenciar pedidos.</div>
 
-### Tecnologias utilizadas no projeto
+### Entregáveis do projeto
+
+#### O entregável 1
+<div style="text-align: justify">É composto pela documentação do sistema, seguindo o modelo DDD, abordando os fluxos de realização do pedido, pagamento e preparação de entrega. No modelo DDD, devem ser documentadas as ações a serem realizadas pelo sistema, obtidas por meio de sessões de Brainstorming do time, diagrama de linha do tempo das ações, diagrama de contextos delimitados e glossário de linguagem ubíqua.</div>
+
+#### O entregável 2
+<div style="text-align: justify">Este entregável abrange a refatoração do código elaborado na fase 1, criação das novas APIs, implementação da arquitetura em Kubernetes e a disponibilização de documentação para facilitar a execução e compreensão do projeto.</div>
+
+### Requisitos funcionais
+
+#### Identificação e autenticação
+##### Autenticação do usuário
+Os usuários devem ser capazes de se autenticarem no sistema através de usuário e senha.
+
+##### Cadastros de cliente
+Os usuários devem ser capazes de se cadastrar fornecendo nome, e-mail e CPF.
+
+#### Pedido
+##### Listagem de produto
+Os usuários devem ser capazes de consultar os produtos que se encontram cadastrados.
+
+##### Criação de pedido
+Os usuários devem ser capazes de criar pedidos com os produtos cadastrados.
+
+##### Alteração de pedido
+Os usuários devem ser capazes de alterar os produtos do pedido.
+
+##### Cancelamento de pedido
+Os usuários devem ser capazes de cancelar o pedido, desde que o pagamento não tenha sido confirmado.
+
+#### Preparação
+##### Listagem dos pedidos na fila
+Os usuários funcionários devem ser capazes de listar os pedidos criados.
+
+##### Manutenção do pedido na fila
+Os usuários funcionários devem ser capazes de alterar o status do pedido na fila.
+
+###  Tecnologias 
+
+#### Tecnologias utilizadas no projeto
 
 * node            18.16.0
 * npm             9.5.1
 * docker          23.0.5
 * docker-compose  2.23.0
 
-##  Serviços
+###  Serviços
 
 * Github
 
-##  Getting started
+###  Getting started
 
-### Dependências de Produção
+#### Dependências de Produção
   - bcrypt        5.1.1
   - cli-color     2.0.3
   - express       4.18.2
@@ -40,7 +112,7 @@ Tópicos
   - mongodb       6.3.0
   - validator     13.11.0
 
-### Dependências de Desenvolvimento
+#### Dependências de Desenvolvimento
   - jest          29.7.0
   - supertest     6.3.3
   - mockdate      3.0.5
@@ -56,9 +128,9 @@ Tópicos
     - eslint-plugin-import      2.25.2
   - jest                        28.1.0
   
-##  Execute a aplicação
+###  Execute a aplicação
 
-### Docker
+#### Docker
     - npm run up:locally - Realiza o build da imagem antes de executar
     - npm run up - Apenas executa a aplicação em Docker
     
@@ -67,18 +139,21 @@ Tópicos
     - npm run test:unit - Executa testes unitários
     - npm run test:integration - Executa testes de integração
 
-## Rotas
+### Rotas
 
-### Login
+### Health
+  - [GET] Health Check - Verifica a saúde da API
+
+#### Login
   - [POST]  SignUp - Versão do cliente
   - [POST]  SignUp - Versão do administrador
   - [POST]  Login
   - [POST]  Logout
 
-### Accounts
+#### Accounts
   - [GET] Consulta registro por CPF
 
-### Products
+#### Products
   - [GET] Consulta Produtos
     - Retorna todos os produtos cadastrados
     - Habilitado para uso de query params
@@ -86,7 +161,7 @@ Tópicos
   - [PATCH] [ADMIN] Atualiza Produto
   - [DELETE]  [ADMIN] Deleta Produto
 
-### Orders
+#### Orders
   - [GET] Consulta Pedidos
     - Retorna todos os pedidos realizados
     - Habilitado para uso de query params
