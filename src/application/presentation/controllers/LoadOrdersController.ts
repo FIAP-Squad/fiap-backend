@@ -1,8 +1,8 @@
-import { type ILoadOrders } from '@/domain/ports/driving/services'
+import { type ILoadOrders } from '@/domain/interfaces/driving/services'
 import {
   type IHTTPResponse,
   type IController
-} from '@/domain/ports/driving/presentation'
+} from '@/domain/interfaces/driving/presentation'
 import { noContent, ok, serverError } from '@/application/presentation/helpers'
 
 export class LoadOrdersController implements IController {

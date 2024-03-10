@@ -1,6 +1,6 @@
 import { makeLogControllerDecorator } from '@/main/factories/decorators'
 import { makeDbLoadProducts } from '@/main/factories/usecases'
-import { type IController } from '@/domain/ports/driving/presentation'
+import { type IController } from '@/domain/interfaces/driving/presentation'
 import { LoadProductsController } from '@/application/presentation/controllers'
 
 export const makeLoadProductsController = (): IController => {

@@ -1,14 +1,14 @@
 import { MongoDBHelper } from '.'
 import { ObjectId } from 'mongodb'
 import { type Account } from '@/domain/entities'
-import { type AddAccountParams } from '@/domain/ports/driving/services'
+import { type AddAccountParams } from '@/domain/interfaces/driving/services'
 import {
   type IDeleteAccessTokenRepository,
   type IAddAccountRepository,
   type ILoadAccountByEmailRepository,
   type ILoadAccountByTokenRepository,
   type IUpdateAccessTokenRepository
-} from '@/domain/ports/driven'
+} from '@/domain/interfaces/driven'
 
 export class AccountMongoRepository implements
   IAddAccountRepository,

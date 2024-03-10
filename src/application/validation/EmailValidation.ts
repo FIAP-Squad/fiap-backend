@@ -1,5 +1,5 @@
-import { type IEmailValidator } from '@/domain/ports/driven/validators'
-import { type IValidation } from '@/domain/ports/driving/presentation'
+import { type IEmailValidator } from '@/domain/interfaces/driven/validators'
+import { type IValidation } from '@/domain/interfaces/driving/presentation'
 import { InvalidParam } from '@/application/presentation/errors'
 
 export class EmailValidation implements IValidation {

@@ -1,4 +1,4 @@
-import { type IValidation } from '@/domain/ports/driving/presentation'
+import { type IValidation } from '@/domain/interfaces/driving/presentation'
 
 export class ValidationComposite implements IValidation {
   constructor (private readonly _validations: IValidation[]) { }

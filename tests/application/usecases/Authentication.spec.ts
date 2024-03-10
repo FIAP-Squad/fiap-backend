@@ -1,12 +1,12 @@
 import { Authentication } from '@/application/usecases'
 import { type Account } from '@/domain/entities'
-import { type AuthenticationParams } from '@/domain/ports/driving/services'
+import { type AuthenticationParams } from '@/domain/interfaces/driving/services'
 import {
   type IEncrypter,
   type IHashComparer,
   type IUpdateAccessTokenRepository,
   type ILoadAccountByEmailRepository
-} from '@/domain/ports/driven'
+} from '@/domain/interfaces/driven'
 
 const mockAccount = (): Account => ({
   name: 'any_name',

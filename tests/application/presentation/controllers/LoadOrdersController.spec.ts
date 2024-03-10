@@ -1,6 +1,6 @@
 import { type Order } from '@/domain/entities'
-import { type ILoadOrders } from '@/domain/ports/driving/services'
-import { type IHTTPRequest } from '@/domain/ports/driving/presentation'
+import { type ILoadOrders } from '@/domain/interfaces/driving/services'
+import { type IHTTPRequest } from '@/domain/interfaces/driving/presentation'
 import { LoadOrdersController } from '@/application/presentation/controllers'
 import { noContent, serverError } from '@/application/presentation/helpers'
 

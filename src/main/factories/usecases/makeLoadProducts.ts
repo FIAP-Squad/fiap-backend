@@ -1,4 +1,4 @@
-import { type ILoadProducts } from '@/domain/ports/driving/services'
+import { type ILoadProducts } from '@/domain/interfaces/driving/services'
 import { LoadProducts } from '@/application/usecases'
 import { ProductMongoRepository } from '@/infrastructure/repositories/mongodb'
 

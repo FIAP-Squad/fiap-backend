@@ -1,5 +1,5 @@
 import { type Collection } from 'mongodb'
-import { type AddAccountParams } from '@/domain/ports/driving/services'
+import { type AddAccountParams } from '@/domain/interfaces/driving/services'
 import { hash } from 'bcrypt'
 import { sign } from 'jsonwebtoken'
 import request from 'supertest'

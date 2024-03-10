@@ -1,7 +1,7 @@
 import { makeSignUpValidation } from '@/main/factories/validations'
 import { makeLogControllerDecorator } from '@/main/factories/decorators'
 import { makeDbAuthentication, makeDbAddAccount } from '@/main/factories/usecases'
-import { type IController } from '@/domain/ports/driving/presentation'
+import { type IController } from '@/domain/interfaces/driving/presentation'
 import { SignUpController } from '@/application/presentation/controllers/SignUpController'
 
 export const makeSignUpController = (): IController => {

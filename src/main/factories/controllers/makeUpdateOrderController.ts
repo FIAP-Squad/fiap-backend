@@ -2,7 +2,7 @@ import { makeDbUpdateOrder } from '@/main/factories/usecases'
 import { makeUpdateOrderValidation } from '@/main/factories/validations'
 import { makeLogControllerDecorator } from '@/main/factories/decorators'
 import { UpdateOrderController } from '@/application/presentation/controllers'
-import { type IController } from '@/domain/ports/driving/presentation'
+import { type IController } from '@/domain/interfaces/driving/presentation'
 
 export const makeUpdateOrderController = (): IController => {
   const controller = new UpdateOrderController(makeUpdateOrderValidation(), makeDbUpdateOrder())

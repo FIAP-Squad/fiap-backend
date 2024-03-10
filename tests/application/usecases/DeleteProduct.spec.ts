@@ -1,4 +1,4 @@
-import { type IDeleteProductRepository } from '@/domain/ports/driven'
+import { type IDeleteProductRepository } from '@/domain/interfaces/driven'
 import { DeleteProduct } from '@/application/usecases'
 
 const mockDeleteProductRepository = (): IDeleteProductRepository => {

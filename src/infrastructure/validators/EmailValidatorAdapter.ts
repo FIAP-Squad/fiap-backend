@@ -1,4 +1,4 @@
-import { type IEmailValidator } from '@/domain/ports/driven/validators'
+import { type IEmailValidator } from '@/domain/interfaces/driven/validators'
 import validator from 'validator'
 
 export class EmailValidatorAdapter implements IEmailValidator {

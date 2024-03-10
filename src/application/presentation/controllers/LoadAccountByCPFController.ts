@@ -1,4 +1,4 @@
-import { type ILoadAccountByCPF } from '@/domain/ports/driving/services'
+import { type ILoadAccountByCPF } from '@/domain/interfaces/driving/services'
 import {
   ok,
   notFound,
@@ -7,7 +7,7 @@ import {
 import {
   type IController,
   type IHTTPResponse
-} from '@/domain/ports/driving/presentation'
+} from '@/domain/interfaces/driving/presentation'
 
 export class LoadAccountByCPFController implements IController {
   constructor (private readonly _usecase: ILoadAccountByCPF) { }

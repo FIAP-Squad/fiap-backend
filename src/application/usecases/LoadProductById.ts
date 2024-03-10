@@ -1,6 +1,6 @@
 import { type Product } from '@/domain/entities'
-import { type ILoadProductById } from '@/domain/ports/driving/services'
-import { type ILoadProductByIdRepository } from '@/domain/ports/driven'
+import { type ILoadProductById } from '@/domain/interfaces/driving/services'
+import { type ILoadProductByIdRepository } from '@/domain/interfaces/driven'
 
 export class LoadProductById implements ILoadProductById {
   constructor (private readonly _repository: ILoadProductByIdRepository) { }

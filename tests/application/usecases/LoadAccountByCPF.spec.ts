@@ -1,6 +1,6 @@
 import { LoadACcountByCPF } from '@/application/usecases'
 import { type Account } from '@/domain/entities'
-import { type ILoadAccountByCPFRepository } from '@/domain/ports/driven'
+import { type ILoadAccountByCPFRepository } from '@/domain/interfaces/driven'
 
 const mockAccount = (): Account => ({
   id: 'valid_id',

@@ -1,9 +1,9 @@
-import { type ILogErrorRepository } from '@/domain/ports/driven/repositories'
+import { type ILogErrorRepository } from '@/domain/interfaces/driven/repositories'
 import {
   type IController,
   type IHTTPRequest,
   type IHTTPResponse
-} from '@/domain/ports/driving/presentation'
+} from '@/domain/interfaces/driving/presentation'
 
 export class LogControllerDecorator implements IController {
   constructor (

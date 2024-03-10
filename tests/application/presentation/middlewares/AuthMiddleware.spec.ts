@@ -1,6 +1,6 @@
 import { type Account } from '@/domain/entities'
-import { type ILoadAccountByToken } from '@/domain/ports/driving/services'
-import { type IHTTPRequest } from '@/domain/ports/driving/presentation'
+import { type ILoadAccountByToken } from '@/domain/interfaces/driving/services'
+import { type IHTTPRequest } from '@/domain/interfaces/driving/presentation'
 import { AuthMiddleware } from '@/application/presentation/middlewares'
 import { AccessDenied } from '@/application/presentation/errors'
 import {

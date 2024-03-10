@@ -1,6 +1,6 @@
 import {
   type IAddOrderRepository
-} from '@/domain/ports/driven'
+} from '@/domain/interfaces/driven'
 import { AddOrder } from '@/application/usecases'
 import { type Order } from '@/domain/entities'
 

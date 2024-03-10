@@ -1,4 +1,4 @@
-import { type IValidation } from '@/domain/ports/driving/presentation'
+import { type IValidation } from '@/domain/interfaces/driving/presentation'
 import { MissingField } from '@/application/presentation/errors'
 
 export class MandatoryFieldValidation implements IValidation {

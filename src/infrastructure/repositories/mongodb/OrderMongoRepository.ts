@@ -3,13 +3,13 @@ import {
   type UpdateOrderParams,
   type AddOrderDetailsParams,
   type AddOrderItemParams
-} from '@/domain/ports/driving/services'
+} from '@/domain/interfaces/driving/services'
 import {
   type IUpdateOrderRepository,
   type IAddOrderRepository,
   type ILoadOrdersRepository,
   type OrderWithCode
-} from '@/domain/ports/driven'
+} from '@/domain/interfaces/driven'
 import { MongoDBHelper } from '@/infrastructure/repositories'
 import { ObjectId } from 'mongodb'
 

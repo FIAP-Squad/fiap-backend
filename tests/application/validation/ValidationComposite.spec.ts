@@ -1,4 +1,4 @@
-import { type IValidation } from '@/domain/ports/driving/presentation'
+import { type IValidation } from '@/domain/interfaces/driving/presentation'
 import { MissingParam } from '@/application/presentation/errors'
 import { ValidationComposite } from '@/application/validation'
 

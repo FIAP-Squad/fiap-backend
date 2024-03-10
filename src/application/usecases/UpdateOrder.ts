@@ -1,8 +1,8 @@
 import {
   type UpdateOrderParams,
   type IUpdateOrder
-} from '@/domain/ports/driving/services'
-import { type IUpdateOrderRepository } from '@/domain/ports/driven'
+} from '@/domain/interfaces/driving/services'
+import { type IUpdateOrderRepository } from '@/domain/interfaces/driven'
 
 export class UpdateOrder implements IUpdateOrder {
   constructor (private readonly _repository: IUpdateOrderRepository) { }

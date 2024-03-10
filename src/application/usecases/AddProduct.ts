@@ -1,5 +1,5 @@
-import { type IAddProduct, type AddProductParams } from '@/domain/ports/driving/services'
-import { type IAddProductRepository } from '@/domain/ports/driven'
+import { type IAddProduct, type AddProductParams } from '@/domain/interfaces/driving/services'
+import { type IAddProductRepository } from '@/domain/interfaces/driven'
 
 export class AddProduct implements IAddProduct {
   constructor (private readonly _repository: IAddProductRepository) { }

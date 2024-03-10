@@ -1,4 +1,4 @@
-import { type IController, type IHTTPRequest } from '@/domain/ports/driving/presentation'
+import { type IController, type IHTTPRequest } from '@/domain/interfaces/driving/presentation'
 import { type Request, type Response } from 'express'
 import clc from 'cli-color'
 

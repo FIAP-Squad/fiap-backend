@@ -1,4 +1,4 @@
-import { type IAddOrder } from '@/domain/ports/driving/services'
+import { type IAddOrder } from '@/domain/interfaces/driving/services'
 import { AddOrder } from '@/application/usecases'
 import { OrderMongoRepository } from '@/infrastructure/repositories/mongodb'
 
