@@ -1,4 +1,4 @@
-import { type ILogErrorRepository } from '@/domain/interfaces/driven'
+import { type ILogErrorRepository } from '@/infrastructure'
 import {
   type IController,
   type IHTTPRequest, type IHTTPResponse

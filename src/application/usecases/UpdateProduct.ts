@@ -2,7 +2,7 @@ import {
   type UpdateProductParams,
   type IUpdateProduct
 } from '@/application/usecases/ports'
-import { type IUpdateProductRepository } from '@/domain/interfaces/driven'
+import { type IUpdateProductRepository } from '@/infrastructure'
 
 export class UpdateProduct implements IUpdateProduct {
   constructor (private readonly _repository: IUpdateProductRepository) { }

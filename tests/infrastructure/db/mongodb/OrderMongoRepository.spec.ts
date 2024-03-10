@@ -1,5 +1,5 @@
 import { type Order } from '@/domain/entities'
-import { type OrderWithCode } from '@/domain/interfaces/driven'
+import { type OrderWithCode } from '@/infrastructure'
 import {
   type AddOrderItemParams,
   type AddOrderDetailsParams

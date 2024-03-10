@@ -1,4 +1,4 @@
-import { type IEncrypter, type IDecrypter } from '@/domain/interfaces/driven'
+import { type IEncrypter, type IDecrypter } from '@/infrastructure'
 import jwt from 'jsonwebtoken'
 
 export class JwtAdapter implements IEncrypter, IDecrypter {

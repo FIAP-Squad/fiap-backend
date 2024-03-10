@@ -5,7 +5,7 @@ import {
   type IHasher,
   type IAddAccountRepository,
   type ILoadAccountByEmailRepository
-} from '@/domain/interfaces/driven'
+} from '@/infrastructure'
 
 const mockHasher = (): IHasher => {
   class HasherStub implements IHasher {

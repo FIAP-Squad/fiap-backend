@@ -1,6 +1,6 @@
 import { type Order } from '@/domain/entities'
 import { type ILoadOrders } from '@/application/usecases/ports'
-import { type ILoadOrdersRepository } from '@/domain/interfaces/driven'
+import { type ILoadOrdersRepository } from '@/infrastructure'
 
 export class LoadOrders implements ILoadOrders {
   constructor (private readonly _repository: ILoadOrdersRepository) { }

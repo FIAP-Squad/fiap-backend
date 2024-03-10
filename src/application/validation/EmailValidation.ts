@@ -1,4 +1,4 @@
-import { type IEmailValidator } from '@/domain/interfaces/driven/validators'
+import { type IEmailValidator } from '@/infrastructure/validators/ports'
 import { type IValidation } from '@/application/presentation/ports'
 import { InvalidParam } from '@/application/presentation/errors'
 

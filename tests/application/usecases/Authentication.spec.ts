@@ -6,7 +6,7 @@ import {
   type IHashComparer,
   type IUpdateAccessTokenRepository,
   type ILoadAccountByEmailRepository
-} from '@/domain/interfaces/driven'
+} from '@/infrastructure'
 
 const mockAccount = (): Account => ({
   name: 'any_name',

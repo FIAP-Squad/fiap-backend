@@ -1,6 +1,6 @@
 import { LoadProductById } from '@/application/usecases'
 import { type Product } from '@/domain/entities'
-import { type ILoadProductByIdRepository } from '@/domain/interfaces/driven'
+import { type ILoadProductByIdRepository } from '@/infrastructure'
 
 const mockProduct = (): Product => ({
   id: 'any_id',

@@ -1,4 +1,4 @@
-import { type IHasher, type IHashComparer } from '@/domain/interfaces/driven'
+import { type IHasher, type IHashComparer } from '@/infrastructure'
 import bcrypt from 'bcrypt'
 
 export class BcryptAdapter implements IHasher, IHashComparer {
