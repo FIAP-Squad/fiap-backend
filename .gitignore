@@ -10,3 +10,4 @@ __status__
 todo
 .DS_Store
 */.DS_Store
+infra-tf/.terraform/*
