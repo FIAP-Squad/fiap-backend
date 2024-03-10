@@ -1,5 +1,5 @@
 import { type Product } from '@/domain/entities'
-import { type ILoadProductById } from '@/domain/interfaces/driving/usecases'
+import { type ILoadProductById } from '@/application/usecases/ports'
 import { type IHTTPRequest } from '@/application/presentation/ports'
 import { LoadProductByIdController } from '@/application/presentation/controllers'
 import {

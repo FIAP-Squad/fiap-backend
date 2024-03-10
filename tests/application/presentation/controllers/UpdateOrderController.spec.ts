@@ -7,7 +7,7 @@ import { badRequest, noContent, serverError } from '@/application/presentation/h
 import {
   type IUpdateOrder,
   type UpdateOrderParams
-} from '@/domain/interfaces/driving/usecases'
+} from '@/application/usecases/ports'
 
 const mockRequest = (): IHTTPRequest => ({
   params: {

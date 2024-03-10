@@ -1,4 +1,4 @@
-import { type ILoadOrders } from '@/domain/interfaces/driving/usecases'
+import { type ILoadOrders } from '@/application/usecases/ports'
 import {
   type IHTTPResponse,
   type IController

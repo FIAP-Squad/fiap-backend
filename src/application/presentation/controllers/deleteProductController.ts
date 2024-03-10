@@ -1,4 +1,4 @@
-import { type IDeleteProduct } from '@/domain/interfaces/driving/usecases'
+import { type IDeleteProduct } from '@/application/usecases/ports'
 import {
   noContent,
   serverError

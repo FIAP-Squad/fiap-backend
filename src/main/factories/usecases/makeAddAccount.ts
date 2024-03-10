@@ -1,4 +1,4 @@
-import { type IAddAccount } from '@/domain/interfaces/driving/usecases'
+import { type IAddAccount } from '@/application/usecases/ports'
 import { AddAccount } from '@/application/usecases'
 import { BcryptAdapter } from '@/infrastructure/criptography'
 import { AccountMongoRepository } from '@/infrastructure/repositories/mongodb'

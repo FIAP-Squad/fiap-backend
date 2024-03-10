@@ -1,4 +1,4 @@
-import { type IAuthentication } from '@/domain/interfaces/driving/usecases'
+import { type IAuthentication } from '@/application/usecases/ports'
 import {
   ok,
   badRequest,

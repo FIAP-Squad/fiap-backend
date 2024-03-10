@@ -1,4 +1,4 @@
-import { type IDeleteProduct } from '@/domain/interfaces/driving/usecases'
+import { type IDeleteProduct } from '@/application/usecases/ports'
 import { type IHTTPRequest } from '@/application/presentation/ports'
 import { DeleteProductController } from '@/application/presentation/controllers'
 import {

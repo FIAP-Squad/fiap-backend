@@ -1,4 +1,4 @@
-import { type IUpdateProduct } from '@/domain/interfaces/driving/usecases'
+import { type IUpdateProduct } from '@/application/usecases/ports'
 import { UpdateProduct } from '@/application/usecases'
 import { ProductMongoRepository } from '@/infrastructure/repositories/mongodb'
 

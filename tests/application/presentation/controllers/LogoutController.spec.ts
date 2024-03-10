@@ -1,4 +1,4 @@
-import { type ILogout } from '@/domain/interfaces/driving/usecases'
+import { type ILogout } from '@/application/usecases/ports'
 import { type IValidation, type IHTTPRequest } from '@/application/presentation/ports'
 import { LogoutController } from '@/application/presentation/controllers'
 import { MissingParam } from '@/application/presentation/errors'

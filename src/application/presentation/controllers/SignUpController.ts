@@ -1,7 +1,7 @@
 import {
   type IAddAccount,
   type IAuthentication
-} from '@/domain/interfaces/driving/usecases'
+} from '@/application/usecases/ports'
 import {
   ok,
   forbidden,

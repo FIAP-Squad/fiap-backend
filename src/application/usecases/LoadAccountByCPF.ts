@@ -1,5 +1,5 @@
 import { type Account } from '@/domain/entities'
-import { type ILoadAccountByCPF } from '@/domain/interfaces/driving/usecases'
+import { type ILoadAccountByCPF } from '@/application/usecases/ports'
 import { type ILoadAccountByCPFRepository } from '@/domain/interfaces/driven'
 
 export class LoadACcountByCPF implements ILoadAccountByCPF {

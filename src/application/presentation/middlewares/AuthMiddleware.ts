@@ -1,4 +1,4 @@
-import { type ILoadAccountByToken } from '@/domain/interfaces/driving/usecases'
+import { type ILoadAccountByToken } from '@/application/usecases/ports'
 import {
   type IMiddleware,
   type IHTTPRequest,

@@ -1,7 +1,7 @@
 import { MongoDBHelper } from '.'
 import { ObjectId } from 'mongodb'
 import { type Account } from '@/domain/entities'
-import { type AddAccountParams } from '@/domain/interfaces/driving/usecases'
+import { type AddAccountParams } from '@/application/usecases/ports'
 import {
   type IDeleteAccessTokenRepository,
   type IAddAccountRepository,

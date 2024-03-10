@@ -1,7 +1,7 @@
 import {
   type AddProductParams,
   type IAddProduct
-} from '@/domain/interfaces/driving/usecases'
+} from '@/application/usecases/ports'
 import {
   type IHTTPRequest,
   type IValidation

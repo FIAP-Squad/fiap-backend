@@ -1,6 +1,6 @@
 import { type Account } from '@/domain/entities'
 import { type IHTTPRequest } from '@/application/presentation/ports'
-import { type ILoadAccountByCPF } from '@/domain/interfaces/driving/usecases'
+import { type ILoadAccountByCPF } from '@/application/usecases/ports'
 import { LoadAccountByCPFController } from '@/application/presentation/controllers'
 import {
   notFound,

@@ -1,4 +1,4 @@
-import { type AddProductParams } from '@/domain/interfaces/driving/usecases/IAddProduc'
+import { type AddProductParams } from '@/application/usecases/ports/IAddProduc'
 
 export interface IAddProductRepository {
   add: (params: AddProductParams) => Promise<void>

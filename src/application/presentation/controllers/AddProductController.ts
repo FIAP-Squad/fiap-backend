@@ -1,4 +1,4 @@
-import { type IAddProduct } from '@/domain/interfaces/driving/usecases'
+import { type IAddProduct } from '@/application/usecases/ports'
 import {
   badRequest,
   noContent,

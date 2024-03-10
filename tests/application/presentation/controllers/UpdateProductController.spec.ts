@@ -1,5 +1,5 @@
 import { type IValidation, type IHTTPRequest } from '@/application/presentation/ports'
-import { type UpdateProductParams, type IUpdateProduct } from '@/domain/interfaces/driving/usecases'
+import { type UpdateProductParams, type IUpdateProduct } from '@/application/usecases/ports'
 import { UpdateProductController } from '@/application/presentation/controllers'
 import { badRequest, noContent, serverError } from '@/application/presentation/helpers'
 

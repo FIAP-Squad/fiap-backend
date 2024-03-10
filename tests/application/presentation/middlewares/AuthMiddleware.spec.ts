@@ -1,5 +1,5 @@
 import { type Account } from '@/domain/entities'
-import { type ILoadAccountByToken } from '@/domain/interfaces/driving/usecases'
+import { type ILoadAccountByToken } from '@/application/usecases/ports'
 import { type IHTTPRequest } from '@/application/presentation/ports'
 import { AuthMiddleware } from '@/application/presentation/middlewares'
 import { AccessDenied } from '@/application/presentation/errors'

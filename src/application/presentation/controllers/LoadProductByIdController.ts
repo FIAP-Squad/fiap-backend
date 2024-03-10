@@ -1,4 +1,4 @@
-import { type ILoadProductById } from '@/domain/interfaces/driving/usecases'
+import { type ILoadProductById } from '@/application/usecases/ports'
 import {
   ok,
   noContent,

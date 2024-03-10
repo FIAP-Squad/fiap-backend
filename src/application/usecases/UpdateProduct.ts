@@ -1,7 +1,7 @@
 import {
   type UpdateProductParams,
   type IUpdateProduct
-} from '@/domain/interfaces/driving/usecases'
+} from '@/application/usecases/ports'
 import { type IUpdateProductRepository } from '@/domain/interfaces/driven'
 
 export class UpdateProduct implements IUpdateProduct {

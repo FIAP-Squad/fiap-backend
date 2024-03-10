@@ -1,5 +1,5 @@
 import { type Collection } from 'mongodb'
-import { type AddAccountParams } from '@/domain/interfaces/driving/usecases'
+import { type AddAccountParams } from '@/application/usecases/ports'
 import {
   MongoDBHelper,
   AccountMongoRepository

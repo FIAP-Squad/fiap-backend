@@ -1,4 +1,4 @@
-import { type IUpdateOrder } from '@/domain/interfaces/driving/usecases'
+import { type IUpdateOrder } from '@/application/usecases/ports'
 import { UpdateOrder } from '@/application/usecases'
 import { OrderMongoRepository } from '@/infrastructure/repositories/mongodb'
 

@@ -1,4 +1,4 @@
-import { type IAddOrder } from '@/domain/interfaces/driving/usecases'
+import { type IAddOrder } from '@/application/usecases/ports'
 import { type IAddOrderRepository } from '@/domain/interfaces/driven'
 import { type Order } from '@/domain/entities'
 

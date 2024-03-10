@@ -1,6 +1,6 @@
 import {
   type IAuthentication, type AuthenticationParams
-} from '@/domain/interfaces/driving/usecases'
+} from '@/application/usecases/ports'
 import {
   type IHTTPRequest, type IValidation
 } from '@/application/presentation/ports'

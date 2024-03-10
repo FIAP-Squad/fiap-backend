@@ -1,4 +1,4 @@
-import { type IUpdateProduct } from '@/domain/interfaces/driving/usecases'
+import { type IUpdateProduct } from '@/application/usecases/ports'
 import {
   type IValidation,
   type IController,

@@ -4,7 +4,7 @@ import {
   type IValidation
 } from '@/application/presentation/ports'
 import { badRequest, ok, serverError } from '@/application/presentation/helpers'
-import { type IAddOrder } from '@/domain/interfaces/driving/usecases'
+import { type IAddOrder } from '@/application/usecases/ports'
 
 export class AddOrderController implements IController {
   constructor (

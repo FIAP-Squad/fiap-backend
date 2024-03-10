@@ -5,7 +5,7 @@ import {
   type IHTTPRequest
 } from '@/application/presentation/ports'
 import { badRequest, noContent, serverError } from '@/application/presentation/helpers'
-import { type IUpdateOrder } from '@/domain/interfaces/driving/usecases'
+import { type IUpdateOrder } from '@/application/usecases/ports'
 
 export class UpdateOrderController implements IController {
   constructor (

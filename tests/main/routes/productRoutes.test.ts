@@ -1,6 +1,6 @@
 import { type Collection } from 'mongodb'
 import { type Express } from 'express'
-import { type UpdateProductParams, type AddProductParams } from '@/domain/interfaces/driving/usecases'
+import { type UpdateProductParams, type AddProductParams } from '@/application/usecases/ports'
 import request from 'supertest'
 import env from '@/main/config/env'
 import { sign } from 'jsonwebtoken'

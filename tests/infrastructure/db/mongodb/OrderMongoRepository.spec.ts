@@ -3,7 +3,7 @@ import { type OrderWithCode } from '@/domain/interfaces/driven'
 import {
   type AddOrderItemParams,
   type AddOrderDetailsParams
-} from '@/domain/interfaces/driving/usecases'
+} from '@/application/usecases/ports'
 import { MongoDBHelper, OrderMongoRepository } from '@/infrastructure/repositories'
 import { ObjectId, type Collection } from 'mongodb'
 

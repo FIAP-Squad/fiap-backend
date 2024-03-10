@@ -1,4 +1,4 @@
-import { type ILogout } from '@/domain/interfaces/driving/usecases'
+import { type ILogout } from '@/application/usecases/ports'
 import { type IHTTPResponse, type IController, type IValidation } from '@/application/presentation/ports'
 import { badRequest, noContent, serverError } from '@/application/presentation/helpers'
 

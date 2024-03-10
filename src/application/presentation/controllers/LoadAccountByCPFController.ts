@@ -1,4 +1,4 @@
-import { type ILoadAccountByCPF } from '@/domain/interfaces/driving/usecases'
+import { type ILoadAccountByCPF } from '@/application/usecases/ports'
 import {
   ok,
   notFound,

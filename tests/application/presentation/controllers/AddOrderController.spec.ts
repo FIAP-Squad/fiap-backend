@@ -4,7 +4,7 @@ import {
 } from '@/application/presentation/ports'
 import { AddOrderController } from '@/application/presentation/controllers'
 import { badRequest, ok, serverError } from '@/application/presentation/helpers'
-import { type IAddOrder } from '@/domain/interfaces/driving/usecases/IAddOrder'
+import { type IAddOrder } from '@/application/usecases/ports/IAddOrder'
 import { type Order } from '@/domain/entities'
 
 const mockAddOrderParams = (): Order => ({

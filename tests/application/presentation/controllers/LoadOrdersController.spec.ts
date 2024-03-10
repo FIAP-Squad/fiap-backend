@@ -1,5 +1,5 @@
 import { type Order } from '@/domain/entities'
-import { type ILoadOrders } from '@/domain/interfaces/driving/usecases'
+import { type ILoadOrders } from '@/application/usecases/ports'
 import { type IHTTPRequest } from '@/application/presentation/ports'
 import { LoadOrdersController } from '@/application/presentation/controllers'
 import { noContent, serverError } from '@/application/presentation/helpers'
