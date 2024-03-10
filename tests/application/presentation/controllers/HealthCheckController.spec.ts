@@ -1,11 +1,5 @@
-import { type IHTTPResponse, type IController } from '@/application/presentation/ports'
 import { ok } from '@/application/presentation/helpers'
-
-class HealthCheckController implements IController {
-  async handle (): Promise <IHTTPResponse> {
-    return await Promise.resolve(ok({}))
-  }
-}
+import { HealthCheckController } from '@/application/presentation/controllers'
 
 type SutTypes = {
   sut: HealthCheckController
