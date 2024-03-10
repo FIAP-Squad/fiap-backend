@@ -1,4 +1,4 @@
-import { type IEncrypter, type IDecrypter } from '@/infrastructure'
+import { type IEncrypter, type IDecrypter } from '@/infrastructure/ports'
 import jwt from 'jsonwebtoken'
 
 export class JwtAdapter implements IEncrypter, IDecrypter {

@@ -2,7 +2,7 @@ import {
   type UpdateOrderParams,
   type IUpdateOrder
 } from '@/application/usecases/ports'
-import { type IUpdateOrderRepository } from '@/infrastructure'
+import { type IUpdateOrderRepository } from '@/infrastructure/ports'
 
 export class UpdateOrder implements IUpdateOrder {
   constructor (private readonly _repository: IUpdateOrderRepository) { }

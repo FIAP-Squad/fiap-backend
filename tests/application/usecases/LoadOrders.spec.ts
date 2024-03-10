@@ -1,6 +1,6 @@
 import { type Order } from '@/domain/entities'
 import { type ILoadOrders } from '@/application/usecases/ports'
-import { type ILoadOrdersRepository } from '@/infrastructure'
+import { type ILoadOrdersRepository } from '@/infrastructure/ports'
 import { LoadOrders } from '@/application/usecases'
 
 const mockOrders = (): Order[] => ([

@@ -4,7 +4,7 @@ import {
   type ILoadAccountByEmailRepository,
   type IEncrypter,
   type IUpdateAccessTokenRepository
-} from '@/infrastructure'
+} from '@/infrastructure/ports'
 
 export class Authentication implements IAuthentication {
   constructor (

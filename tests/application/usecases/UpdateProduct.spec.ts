@@ -1,7 +1,7 @@
 import {
   type UpdateProductParams,
   type IUpdateProductRepository
-} from '@/infrastructure'
+} from '@/infrastructure/ports'
 import { UpdateProduct } from '@/application/usecases'
 
 const updateParams = (): UpdateProductParams => ({

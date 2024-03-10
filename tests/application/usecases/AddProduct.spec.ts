@@ -1,6 +1,6 @@
 import { AddProduct } from '@/application/usecases'
 import { type AddProductParams } from '@/application/usecases/ports'
-import { type IAddProductRepository } from '@/infrastructure'
+import { type IAddProductRepository } from '@/infrastructure/ports'
 
 const mockAddProductParams = (): AddProductParams => ({
   category: 'any_category',

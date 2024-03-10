@@ -1,5 +1,5 @@
 import { type IAddProduct, type AddProductParams } from '@/application/usecases/ports'
-import { type IAddProductRepository } from '@/infrastructure'
+import { type IAddProductRepository } from '@/infrastructure/ports'
 
 export class AddProduct implements IAddProduct {
   constructor (private readonly _repository: IAddProductRepository) { }

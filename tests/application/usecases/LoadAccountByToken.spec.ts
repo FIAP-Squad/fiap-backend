@@ -3,7 +3,7 @@ import { LoadAccountByToken } from '@/application/usecases'
 import {
   type IDecrypter,
   type ILoadAccountByTokenRepository
-} from '@/infrastructure'
+} from '@/infrastructure/ports'
 
 const mockDecrypterStub = (): IDecrypter => {
   class DecrypterStub implements IDecrypter {

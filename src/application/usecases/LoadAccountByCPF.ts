@@ -1,6 +1,6 @@
 import { type Account } from '@/domain/entities'
 import { type ILoadAccountByCPF } from '@/application/usecases/ports'
-import { type ILoadAccountByCPFRepository } from '@/infrastructure'
+import { type ILoadAccountByCPFRepository } from '@/infrastructure/ports'
 
 export class LoadACcountByCPF implements ILoadAccountByCPF {
   constructor (private readonly _repository: ILoadAccountByCPFRepository) { }

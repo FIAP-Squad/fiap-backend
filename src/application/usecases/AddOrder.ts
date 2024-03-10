@@ -1,5 +1,5 @@
 import { type IAddOrder } from '@/application/usecases/ports'
-import { type IAddOrderRepository } from '@/infrastructure'
+import { type IAddOrderRepository } from '@/infrastructure/ports'
 import { type Order } from '@/domain/entities'
 
 export class AddOrder implements IAddOrder {

@@ -9,7 +9,7 @@ import {
   type IDeleteProductRepository,
   type IUpdateProductRepository,
   type UpdateProductParams
-} from '@/infrastructure'
+} from '@/infrastructure/ports'
 
 export class ProductMongoRepository implements
   IAddProductRepository,

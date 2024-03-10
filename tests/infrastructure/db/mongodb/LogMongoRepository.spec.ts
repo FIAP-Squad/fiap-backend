@@ -2,7 +2,7 @@ import {
   MongoDBHelper,
   LogMongoRepository
 } from '@/infrastructure/repositories'
-import { type ILogErrorRepository } from '@/infrastructure'
+import { type ILogErrorRepository } from '@/infrastructure/ports'
 
 describe('Log Mongo Repository', () => {
   let errorCollection

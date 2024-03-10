@@ -4,7 +4,7 @@ import {
   type IHasher,
   type IAddAccountRepository,
   type ILoadAccountByEmailRepository
-} from '@/infrastructure'
+} from '@/infrastructure/ports'
 
 export class AddAccount implements IAddAccount {
   constructor (

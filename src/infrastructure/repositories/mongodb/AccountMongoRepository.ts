@@ -8,7 +8,7 @@ import {
   type ILoadAccountByEmailRepository,
   type ILoadAccountByTokenRepository,
   type IUpdateAccessTokenRepository
-} from '@/infrastructure'
+} from '@/infrastructure/ports'
 
 export class AccountMongoRepository implements
   IAddAccountRepository,

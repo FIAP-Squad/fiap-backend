@@ -9,7 +9,7 @@ import {
   type IAddOrderRepository,
   type ILoadOrdersRepository,
   type OrderWithCode
-} from '@/infrastructure'
+} from '@/infrastructure/ports'
 import { MongoDBHelper } from '@/infrastructure/repositories'
 import { ObjectId } from 'mongodb'
 
