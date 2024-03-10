@@ -1,10 +1,10 @@
-import { type IAuthentication, type AuthenticationParams } from '@/core/ports/driving/services'
+import { type IAuthentication, type AuthenticationParams } from '@/domain/ports/driving/services'
 import {
   type IHashComparer,
   type ILoadAccountByEmailRepository,
   type IEncrypter,
   type IUpdateAccessTokenRepository
-} from '@/core/ports/driven'
+} from '@/domain/ports/driven'
 
 export class Authentication implements IAuthentication {
   constructor (

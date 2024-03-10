@@ -1,8 +1,8 @@
-import { type ILogErrorRepository } from '@/core/ports/driven'
+import { type ILogErrorRepository } from '@/domain/ports/driven'
 import {
   type IController,
   type IHTTPRequest, type IHTTPResponse
-} from '@/core/ports/driving/presentation'
+} from '@/domain/ports/driving/presentation'
 import { serverError } from '@/application/presentation/helpers'
 import { LogControllerDecorator } from '@/main/decorators'
 

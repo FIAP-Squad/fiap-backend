@@ -1,11 +1,11 @@
 import {
   type IValidation,
   type IHTTPRequest
-} from '@/core/ports/driving/presentation'
+} from '@/domain/ports/driving/presentation'
 import { AddOrderController } from '@/application/presentation/controllers'
 import { badRequest, ok, serverError } from '@/application/presentation/helpers'
-import { type IAddOrder } from '@/core/ports/driving/services/IAddOrder'
-import { type Order } from '@/core/entities'
+import { type IAddOrder } from '@/domain/ports/driving/services/IAddOrder'
+import { type Order } from '@/domain/entities'
 
 const mockAddOrderParams = (): Order => ({
   customer: 'any_customer',

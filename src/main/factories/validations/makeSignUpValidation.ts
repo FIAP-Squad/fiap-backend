@@ -5,7 +5,7 @@ import {
   CompareFieldsValidation,
   RequiredFieldsValidation
 } from '@/application/validation'
-import { type IValidation } from '@/core/ports/driving/presentation'
+import { type IValidation } from '@/domain/ports/driving/presentation'
 import { EmailValidatorAdapter } from '@/infrastructure/validators'
 
 export const makeSignUpValidation = (): ValidationComposite => {

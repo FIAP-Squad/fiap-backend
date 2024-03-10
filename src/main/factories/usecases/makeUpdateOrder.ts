@@ -1,4 +1,4 @@
-import { type IUpdateOrder } from '@/core/ports/driving/services'
+import { type IUpdateOrder } from '@/domain/ports/driving/services'
 import { UpdateOrder } from '@/application/usecases'
 import { OrderMongoRepository } from '@/infrastructure/repositories/mongodb'
 

@@ -1,4 +1,4 @@
-import { type IAuthentication } from '@/core/ports/driving/services'
+import { type IAuthentication } from '@/domain/ports/driving/services'
 import {
   ok,
   badRequest,
@@ -10,7 +10,7 @@ import {
   type IValidation,
   type IHTTPRequest,
   type IHTTPResponse
-} from '@/core/ports/driving/presentation'
+} from '@/domain/ports/driving/presentation'
 
 export class LoginController implements IController {
   constructor (

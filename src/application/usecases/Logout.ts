@@ -1,5 +1,5 @@
-import { type ILogout } from '@/core/ports/driving/services'
-import { type IDeleteAccessTokenRepository } from '@/core/ports/driven'
+import { type ILogout } from '@/domain/ports/driving/services'
+import { type IDeleteAccessTokenRepository } from '@/domain/ports/driven'
 
 export class Logout implements ILogout {
   constructor (private readonly _repository: IDeleteAccessTokenRepository) { }

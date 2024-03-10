@@ -1,4 +1,4 @@
-import { type IValidation } from '@/core/ports/driving/presentation'
+import { type IValidation } from '@/domain/ports/driving/presentation'
 import { makeLogoutValidation } from '@/main/factories/validations'
 import {
   RequiredFieldsValidation,

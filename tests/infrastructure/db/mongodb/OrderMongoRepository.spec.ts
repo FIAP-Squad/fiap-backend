@@ -1,9 +1,9 @@
-import { type Order } from '@/core/entities'
-import { type OrderWithCode } from '@/core/ports/driven'
+import { type Order } from '@/domain/entities'
+import { type OrderWithCode } from '@/domain/ports/driven'
 import {
   type AddOrderItemParams,
   type AddOrderDetailsParams
-} from '@/core/ports/driving/services'
+} from '@/domain/ports/driving/services'
 import { MongoDBHelper, OrderMongoRepository } from '@/infrastructure/repositories'
 import { ObjectId, type Collection } from 'mongodb'
 

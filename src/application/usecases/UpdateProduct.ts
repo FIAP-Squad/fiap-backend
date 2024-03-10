@@ -1,8 +1,8 @@
 import {
   type UpdateProductParams,
   type IUpdateProduct
-} from '@/core/ports/driving/services'
-import { type IUpdateProductRepository } from '@/core/ports/driven'
+} from '@/domain/ports/driving/services'
+import { type IUpdateProductRepository } from '@/domain/ports/driven'
 
 export class UpdateProduct implements IUpdateProduct {
   constructor (private readonly _repository: IUpdateProductRepository) { }

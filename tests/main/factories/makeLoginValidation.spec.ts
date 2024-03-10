@@ -1,4 +1,4 @@
-import { type IValidation } from '@/core/ports/driving/presentation'
+import { type IValidation } from '@/domain/ports/driving/presentation'
 import { EmailValidatorAdapter } from '@/infrastructure/validators'
 import { makeLoginValidation } from '@/main/factories/validations'
 import {

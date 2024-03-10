@@ -1,4 +1,4 @@
-import { type ILogErrorRepository } from '@/core/ports/driven'
+import { type ILogErrorRepository } from '@/domain/ports/driven'
 import { MongoDBHelper } from '.'
 
 export class LogMongoRepository implements ILogErrorRepository {

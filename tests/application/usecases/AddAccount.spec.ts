@@ -1,11 +1,11 @@
 import { AddAccount } from '@/application/usecases'
-import { type AddAccountParams } from '@/core/ports/driving/services'
-import { type Account } from '@/core/entities'
+import { type AddAccountParams } from '@/domain/ports/driving/services'
+import { type Account } from '@/domain/entities'
 import {
   type IHasher,
   type IAddAccountRepository,
   type ILoadAccountByEmailRepository
-} from '@/core/ports/driven'
+} from '@/domain/ports/driven'
 
 const mockHasher = (): IHasher => {
   class HasherStub implements IHasher {

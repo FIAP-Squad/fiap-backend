@@ -1,4 +1,4 @@
-import { type ILoadProductById } from '@/core/ports/driving/services'
+import { type ILoadProductById } from '@/domain/ports/driving/services'
 import {
   ok,
   noContent,
@@ -7,7 +7,7 @@ import {
 import {
   type IController,
   type IHTTPResponse
-} from '@/core/ports/driving/presentation'
+} from '@/domain/ports/driving/presentation'
 
 export class LoadProductByIdController implements IController {
   constructor (private readonly _usecase: ILoadProductById) { }

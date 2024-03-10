@@ -1,6 +1,6 @@
-import { type Account } from '@/core/entities'
-import { type ILoadAccountByToken } from '@/core/ports/driving/services'
-import { type IDecrypter, type ILoadAccountByTokenRepository } from '@/core/ports/driven'
+import { type Account } from '@/domain/entities'
+import { type ILoadAccountByToken } from '@/domain/ports/driving/services'
+import { type IDecrypter, type ILoadAccountByTokenRepository } from '@/domain/ports/driven'
 
 export class LoadAccountByToken implements ILoadAccountByToken {
   constructor (

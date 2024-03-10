@@ -1,7 +1,7 @@
 import { LoadProducts } from '@/application/usecases'
-import { type Product } from '@/core/entities'
-import { type ILoadProducts } from '@/core/ports/driving/services'
-import { type ILoadProductsRepository } from '@/core/ports/driven'
+import { type Product } from '@/domain/entities'
+import { type ILoadProducts } from '@/domain/ports/driving/services'
+import { type ILoadProductsRepository } from '@/domain/ports/driven'
 
 const mockProducts = (): Product[] => ([
   {

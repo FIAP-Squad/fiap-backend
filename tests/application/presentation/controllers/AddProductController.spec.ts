@@ -1,11 +1,11 @@
 import {
   type AddProductParams,
   type IAddProduct
-} from '@/core/ports/driving/services'
+} from '@/domain/ports/driving/services'
 import {
   type IHTTPRequest,
   type IValidation
-} from '@/core/ports/driving/presentation'
+} from '@/domain/ports/driving/presentation'
 import { AddProductController } from '@/application/presentation/controllers'
 import {
   badRequest,
