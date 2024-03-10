@@ -9,10 +9,10 @@ describe('Health routes', () => {
     app = setupApp()
   })
 
-  describe('POST /health', () => {
+  describe('GET /health', () => {
     test('Should return 200 on API healthy', async () => {
       await request(app)
-        .post('/api/health')
+        .get('/api/health')
         .expect(200)
     })
   })
