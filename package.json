@@ -8,6 +8,8 @@
     "start:dev": "ts-node src/main/server.ts",
     "build": "rimraf dist && tsc -p tsconfig-build.json",
     "up": "npm run build && docker-compose up -d",
+    "infra-setup": "terraform -chdir=infra-tf apply -auto-approve",
+    "deploy-k8s": "kubectl apply -f infra-tf/",
     "up:locally": "npm run build && docker build -t nodejs-api-ddd . && docker-compose up -d",
     "down": "docker-compose down",
     "husky:prepare": "husky install",
