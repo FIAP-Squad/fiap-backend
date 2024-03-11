@@ -1,5 +1,6 @@
 import { loginPath } from './paths'
-import { login, loginParams } from './schemas'
+import { login, loginParams, error } from './schemas'
+import { badRequest, serverError, unauthorized, notFound } from './components'
 
 export default {
   openapi: '3.0.0',
@@ -7,6 +8,10 @@ export default {
     title: '15s Snacks API',
     description: 'FIAP Tech Challenge Backend',
     version: '1.0.0'
+  },
+  license: {
+    name: 'GPL-3.0-or-later',
+    url: 'https://spdx.org/licenses/GPL-3.0-or-later.html'
   },
   servers: [{
     url: '/api'
@@ -19,6 +24,13 @@ export default {
   },
   schemas: {
     login,
-    loginParams
+    loginParams,
+    error
+  },
+  components: {
+    badRequest,
+    unauthorized,
+    serverError,
+    notFound
   }
 }
