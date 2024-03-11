@@ -1,6 +1,6 @@
 {
   "name": "nodejs-api-ddd",
-  "version": "2.20.0",
+  "version": "2.20.10",
   "description": "NodeJs Rest API using TDD, Clean Architecture, Typescript and Design Patterns",
   "main": "dist/main/server.js",
   "scripts": {
