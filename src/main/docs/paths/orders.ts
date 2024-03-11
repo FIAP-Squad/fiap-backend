@@ -1,5 +1,8 @@
 export const orders = {
   get: {
+    security: [{
+      bearerAuth: []
+    }],
     tags: ['Order'],
     summary: 'Order API',
     responses: {

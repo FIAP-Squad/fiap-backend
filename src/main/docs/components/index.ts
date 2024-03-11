@@ -1,3 +1,4 @@
+export * from './securitySchemes'
 export * from './badRequest'
 export * from './notFound'
 export * from './serverError'
