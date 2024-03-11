@@ -53,7 +53,8 @@ export class AccountMongoRepository implements
 
   async loadByCpf (cpf: string): Promise<Account> {
     const collection = MongoDBHelper.getCollection('accounts')
-    return await collection.findOne<Account>({ cpf })
+    const account = await collection.findOne<Account>({ cpf })
+    return account && MongoDBHelper.map(account)
   }
 
   async deleteAccessToken (email: string): Promise<void> {

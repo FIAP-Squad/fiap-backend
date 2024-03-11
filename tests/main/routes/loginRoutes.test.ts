@@ -85,13 +85,13 @@ describe('Login Routes', () => {
   })
 
   describe('GET /account/:cpf', () => {
-    test('Should return 403 on account if no accessToken is provided', async () => {
+    test('Should return 403 on account if no access_token is provided', async () => {
       await request(app)
         .get('/api/accounts/cpf')
         .expect(403)
     })
 
-    test('Should return 200 on load account with accessToken', async () => {
+    test('Should return 200 on load account with access_token', async () => {
       const reponse = await accountCollection.insertOne({
         name: 'Gabriel',
         email: 'gabriel.rodrigues@gmail.com',
