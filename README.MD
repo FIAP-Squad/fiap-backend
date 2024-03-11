@@ -101,14 +101,16 @@ Os usuários funcionários devem ser capazes de alterar o status do pedido na fi
 
 #### Tecnologias utilizadas no projeto
 
-* node            18.16.0
-* npm             9.5.1
-* docker          23.0.5
-* docker-compose  2.23.0
+* node                      18.16.0
+* npm                       9.5.1
+* docker                    23.0.5
+* kubernetes                1.28.5
+* terraform aws provider    4.67.0
 
 ###  Serviços
 
 * Github
+* AWS EKS
 
 ###  Getting started
 
