@@ -2,7 +2,7 @@ import { type Order } from '@/domain/entities'
 import { type ILoadOrders } from '@/application/usecases/ports'
 import { type IHTTPRequest } from '@/application/presentation/ports'
 import { LoadOrdersController } from '@/application/presentation/controllers'
-import { noContent, serverError } from '@/application/presentation/helpers'
+import { ok, serverError } from '@/application/presentation/helpers'
 
 const mockOrders = (): Order[] => ([
   {
@@ -72,11 +72,11 @@ describe('LoadOrder IController', () => {
     expect(response.body.length).toEqual(1)
   })
 
-  test('Should return 204 LoadOrder returns empty', async () => {
+  test('Should return 200 if LoadOrder returns empty', async () => {
     const { sut, loadOrdersStub } = mockSut()
     jest.spyOn(loadOrdersStub, 'loadAll').mockReturnValueOnce(Promise.resolve([]))
     const response = await sut.handle({})
-    expect(response).toEqual(noContent())
+    expect(response).toEqual(ok([]))
   })
 
   test('Should 500 if ILoadOrders throws', async () => {
