@@ -138,6 +138,11 @@ Os usuários funcionários devem ser capazes de alterar o status do pedido na fi
     - eslint-config-airbnb-base 15.0.0
     - eslint-plugin-import      2.25.2
   - jest                        28.1.0
+
+#### Dependências de Infraestrutura
+  - kubectl       1.29.1
+  - terraform     1.7.3
+  - awscli        2.15.20
   
 ###  Execute a aplicação
 
