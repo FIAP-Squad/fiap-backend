@@ -61,6 +61,13 @@
 
 ### Requisitos funcionais
 
+#### Arquitetura Kubernetes
+Arquitetura dos recursos utilizados para a hospedagem do projeto, atendendo os requisitos de infraestrutura para escalabilidade da aplicação. Foi utiliza a solução EKS da AWS:
+
+<p align="center">
+  <img src="./public/arquitetura-k8s.jpg" alt="Arquitetura k8s">
+</p>
+
 #### Identificação e autenticação
 ##### Autenticação do usuário
 Os usuários devem ser capazes de se autenticarem no sistema através de usuário e senha.
