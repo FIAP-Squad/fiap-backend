@@ -57,12 +57,14 @@
     "typescript": "^5.3.3"
   },
   "dependencies": {
+    "@types/swagger-ui-express": "^4.1.6",
     "bcrypt": "^5.1.1",
     "cli-color": "^2.0.3",
     "express": "^4.18.2",
     "fast-glob": "^3.3.2",
     "jsonwebtoken": "^9.0.2",
     "mongodb": "^6.3.0",
+    "swagger-ui-express": "^5.0.0",
     "validator": "^13.11.0"
   },
   "engines": {
