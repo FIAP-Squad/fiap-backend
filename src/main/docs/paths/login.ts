@@ -1,4 +1,4 @@
-export const loginPath = {
+export const login = {
   post: {
     tags: ['Login'],
     summary: 'Authenticate User',

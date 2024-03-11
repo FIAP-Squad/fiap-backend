@@ -1,5 +1,5 @@
-export const loadOrdersPath = {
-  post: {
+export const orders = {
+  get: {
     tags: ['Order'],
     summary: 'Order API',
     responses: {
@@ -8,19 +8,13 @@ export const loadOrdersPath = {
         content: {
           'application/json': {
             schema: {
-              $ref: '#/schemas/login'
+              $ref: '#/schemas/loadOrders'
             }
           }
         }
       },
-      400: {
-        $ref: '#/components/badRequest'
-      },
-      401: {
-        $ref: '#/components/unauthorized'
-      },
-      404: {
-        $ref: '#/components/notFound'
+      403: {
+        $ref: '#/components/forbidden'
       },
       500: {
         $ref: '#/components/serverError'
