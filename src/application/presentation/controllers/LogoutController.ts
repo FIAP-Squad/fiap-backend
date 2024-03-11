@@ -5,7 +5,7 @@ import { badRequest, noContent, serverError } from '@/application/presentation/h
 export class LogoutController implements IController {
   constructor (
     private readonly _validation: IValidation,
-    private readonly _repository: ILogout
+    private readonly _usecase: ILogout
   ) { }
 
   async handle (request: any): Promise<IHTTPResponse> {
@@ -13,7 +13,7 @@ export class LogoutController implements IController {
       const error = this._validation.validate(request.body)
       if (error) return badRequest(error)
       const { email } = request.body
-      await this._repository.logout(email)
+      await this._usecase.logout(email)
       return noContent()
     } catch (error) {
       return serverError(error)

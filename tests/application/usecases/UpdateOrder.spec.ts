@@ -4,7 +4,9 @@ import { type UpdateOrderParams } from '@/application/usecases/ports'
 
 const mockUpdateParams = (): UpdateOrderParams => ({
   code: 'any_code',
-  status: 'any_status'
+  body: {
+    status: 'Recebido'
+  }
 })
 
 const mockUpdateOrderRepositoryStub = (): IUpdateOrderRepository => {

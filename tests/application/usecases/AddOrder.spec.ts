@@ -6,6 +6,7 @@ import { type Order } from '@/domain/entities'
 
 const mockAddOrderParams = (): Order => ({
   customer: 'any_customer',
+  payment: 'Aprovado',
   products: [
     {
       id: '65aa013deca75aaae89c3a1b',
@@ -14,7 +15,7 @@ const mockAddOrderParams = (): Order => ({
       amount: 4000
     }
   ],
-  status: 'any_status',
+  status: 'Recebido',
   createdAt: new Date().getTime(),
   amount: 4000
 })

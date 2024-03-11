@@ -1,6 +1,8 @@
+import { type Order } from '@/domain/entities'
+
 export type UpdateOrderParams = {
   code: string
-  status: string
+  body: Partial<Order>
 }
 
 export interface IUpdateOrder {
