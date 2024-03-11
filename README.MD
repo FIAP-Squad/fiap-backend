@@ -68,6 +68,8 @@ Arquitetura dos recursos utilizados para a hospedagem do projeto, atendendo os r
   <img src="./public/arquitetura-k8s.jpg" alt="Arquitetura k8s">
 </p>
 
+Vídeo de demonstração da arquitetura: https://www.youtube.com/watch?v=vBWGeD4QASE
+
 #### Identificação e autenticação
 ##### Autenticação do usuário
 Os usuários devem ser capazes de se autenticarem no sistema através de usuário e senha.
