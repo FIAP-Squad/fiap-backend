@@ -27,11 +27,24 @@ spec:
               name: mongodb-config
               key: MONGO_URL
         resources:
-            requests:
-              cpu: "100m"
-              memory: "150Mi"
-            limits:
-              cpu: "300m"
-              memory: "450Mi"
+          requests:
+            cpu: "100m"
+            memory: "150Mi"
+          limits:
+            cpu: "300m"
+            memory: "450Mi"
+        livenessProbe:
+          httpGet:
+            path: /api/health
+            port: 5050
+          initialDelaySeconds: 10
+          periodSeconds: 30
+        readinessProbe:
+          httpGet:
+            path: /api/health
+            port: 5050
+          initialDelaySeconds: 10
+          failureThreshold: 3
+          periodSeconds: 5
       imagePullSecrets:
         - name: backend-registry-secret
