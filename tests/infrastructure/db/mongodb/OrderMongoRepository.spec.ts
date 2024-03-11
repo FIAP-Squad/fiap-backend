@@ -11,6 +11,7 @@ const mockSut = (): OrderMongoRepository => new OrderMongoRepository()
 
 const mockAddOrderParams = (): OrderWithCode => ({
   code: 'any_code',
+  payment: 'Pendente',
   customer: 'any_customer',
   products: [
     {
@@ -26,7 +27,7 @@ const mockAddOrderParams = (): OrderWithCode => ({
       amount: 6000
     }
   ],
-  status: 'any_status',
+  status: 'Recebido',
   createdAt: new Date().getTime(),
   amount: 4000
 })
@@ -41,7 +42,8 @@ const mockOrderItemParams = (): AddOrderItemParams => ({
 
 const mockAddOrderDetailsParams = (): AddOrderDetailsParams => ({
   customer: 'any_customer',
-  status: 'any_status',
+  payment: 'Pendente',
+  status: 'Recebido',
   createdAt: new Date().getTime(),
   amount: 4000
 })
@@ -101,9 +103,9 @@ describe('OrderRepository', () => {
       const response = await ordersCollection.insertOne(mockAddOrderParams())
       const insertedId = response.insertedId.toHexString()
       const sut = mockSut()
-      await sut.updateOrder({ code: 'any_code', status: 'updated_status' })
+      await sut.updateOrder({ code: 'any_code', body: { status: 'Recebido', payment: 'Aprovado' } })
       const order = await ordersCollection.findOne<Order>({ _id: new ObjectId(insertedId) })
-      expect(order.status).toBe('updated_status')
+      expect(order.status).toBe('Recebido')
     })
   })
 

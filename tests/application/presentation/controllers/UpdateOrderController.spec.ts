@@ -14,7 +14,8 @@ const mockRequest = (): IHTTPRequest => ({
     code: 'any_code'
   },
   body: {
-    status: 'any_status'
+    status: 'any_status',
+    payment: 'any_status'
   }
 })
 
@@ -75,7 +76,10 @@ describe('IUpdateOrder IController', () => {
     await sut.handle(mockRequest())
     expect(updateSpy).toHaveBeenCalledWith({
       code: 'any_code',
-      status: 'any_status'
+      body: {
+        status: 'any_status',
+        payment: 'any_status'
+      }
     })
   })
 

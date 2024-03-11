@@ -6,6 +6,7 @@ import { LoadOrders } from '@/application/usecases'
 const mockOrders = (): Order[] => ([
   {
     customer: 'any_customer',
+    payment: 'Aprovado',
     products: [
       {
         id: '65aa013deca75aaae89c3a1b',
@@ -14,12 +15,13 @@ const mockOrders = (): Order[] => ([
         amount: 4000
       }
     ],
-    status: 'any_status',
+    status: 'Recebido',
     createdAt: new Date().getTime(),
     amount: 4000
   },
   {
     customer: 'other_customer',
+    payment: 'Aprovado',
     products: [
       {
         id: '65aa013deca75aaae89c3a1b',
@@ -28,7 +30,7 @@ const mockOrders = (): Order[] => ([
         amount: 4000
       }
     ],
-    status: 'other_status',
+    status: 'Finalizado',
     createdAt: new Date().getTime(),
     amount: 4000
   }

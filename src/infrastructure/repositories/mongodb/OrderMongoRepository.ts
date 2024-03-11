@@ -43,8 +43,8 @@ export class OrderMongoRepository implements
 
   async updateOrder (params: UpdateOrderParams): Promise<void> {
     const collection = MongoDBHelper.getCollection('orders')
-    const { code, status } = params
-    await collection.findOneAndUpdate({ code }, { $set: { status } })
+    const { code, body } = params
+    await collection.findOneAndUpdate({ code }, { $set: { ...body } })
   }
 
   async loadAll (filter: any): Promise<Order[]> {

@@ -21,7 +21,8 @@ const mockOrders = (): Order[] => ([
         amount: 6000
       }
     ],
-    status: 'any_status',
+    status: 'Recebido',
+    payment: 'Aprovado',
     createdAt: new Date().getTime(),
     amount: 4000
   }

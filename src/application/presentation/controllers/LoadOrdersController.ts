@@ -6,12 +6,12 @@ import {
 import { noContent, ok, serverError } from '@/application/presentation/helpers'
 
 export class LoadOrdersController implements IController {
-  constructor (private readonly _repository: ILoadOrders) { }
+  constructor (private readonly _usecase: ILoadOrders) { }
   async handle (request: any): Promise<IHTTPResponse> {
     try {
       const { query } = request
       const filter = query ? { ...query } : {}
-      const orders = await this._repository.loadAll(filter)
+      const orders = await this._usecase.loadAll(filter)
       return (orders.length > 0) ? ok(orders) : noContent()
     } catch (error) {
       return serverError(error)
