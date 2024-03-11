@@ -55,7 +55,7 @@ describe('Order Routes', () => {
         .expect(403)
     })
 
-    test('Should return 204 on add product with valid accessToken', async () => {
+    test('Should return 200 on add product with valid accessToken', async () => {
       const reponse = await accountCollection.insertOne({
         name: 'Gabriel',
         email: 'gabriel.rodrigues@gmail.com',
@@ -113,20 +113,18 @@ describe('Order Routes', () => {
     })
   })
 
-  describe('GET /products', () => {
+  describe('GET /orders', () => {
     test('Should return 403 on get orders without accessToken', async () => {
       await request(app)
         .get('/api/orders')
-        .send(mockAddOrderParams())
         .expect(403)
     })
 
-    test('Should return 200 on load orders without accessToken', async () => {
+    test('Should return 200 on load orders with accessToken', async () => {
       const reponse = await accountCollection.insertOne({
         name: 'Gabriel',
         email: 'gabriel.rodrigues@gmail.com',
-        password: 123,
-        role: 'admin'
+        password: 123
       })
       const id = reponse.insertedId
       const accessToken = sign({ id }, env.JWT_SECRET)
@@ -138,9 +136,30 @@ describe('Order Routes', () => {
         }
       })
       await request(app)
-        .get('/api/products?customer="any_customer"')
+        .get('/api/orders?customer=any_customer')
         .set('authorization', `Bearer ${accessToken}`)
-        .expect(204)
+        .expect(200)
+    })
+
+    test('Should return 200 if loadOrders returns empty orders with accessToken', async () => {
+      const reponse = await accountCollection.insertOne({
+        name: 'Gabriel',
+        email: 'gabriel.rodrigues@gmail.com',
+        password: 123
+      })
+      const id = reponse.insertedId
+      const accessToken = sign({ id }, env.JWT_SECRET)
+      await accountCollection.updateOne({
+        _id: id
+      }, {
+        $set: {
+          accessToken
+        }
+      })
+      await request(app)
+        .get('/api/orders?customer=invalid_customer')
+        .set('authorization', `Bearer ${accessToken}`)
+        .expect(200)
     })
   })
 })

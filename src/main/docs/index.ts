@@ -5,8 +5,8 @@ import { badRequest, serverError, unauthorized, notFound } from './components'
 export default {
   openapi: '3.0.0',
   info: {
-    title: '15s Snacks API',
-    description: 'FIAP Tech Challenge Backend',
+    title: 'FIAP Tech Challenge API',
+    description: 'FIAP Tech Challenge API',
     version: '1.0.0'
   },
   license: {
@@ -17,7 +17,8 @@ export default {
     url: '/api'
   }],
   tags: [
-    { name: 'Login' }
+    { name: 'Login' },
+    { name: 'Order' }
   ],
   paths: {
     '/login': loginPath
