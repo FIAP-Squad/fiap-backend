@@ -37,7 +37,7 @@ export class SignUpController implements IController {
       })
       if (!account) return forbidden(new EmailInUse())
       const accessToken = await this._authUsecase.auth({ email, password })
-      return ok({ accessToken })
+      return ok({ access_token: accessToken })
     } catch (error) {
       return serverError(error)
     }

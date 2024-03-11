@@ -95,7 +95,7 @@ describe('SignUp IController', () => {
   test('Should return 200 if data is provided', async () => {
     const { sut } = mockSut()
     const response = await sut.handle(mockRequest())
-    expect(response).toEqual(ok({ accessToken: 'any_token' }))
+    expect(response).toEqual(ok({ access_token: 'any_token' }))
   })
 
   test('Should call IAddAccount with correct values', async () => {
