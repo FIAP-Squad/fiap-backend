@@ -1,0 +1,2398 @@
+{
+	"info": {
+		"_postman_id": "c86ae23a-80e4-4b9a-ba8d-3902b53f5d41",
+		"name": "FIAP TECH CHALLENGE",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27330482"
+	},
+	"item": [
+		{
+			"name": "Accounts",
+			"item": [
+				{
+					"name": "[ADMIN] Load Account by CPF",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN_BACKEND}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL_BACKEND}}/api/accounts/12345678909",
+							"host": [
+								"{{BASE_URL_BACKEND}}"
+							],
+							"path": [
+								"api",
+								"accounts",
+								"12345678909"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL_BACKEND}}/api/accounts/12345678909",
+									"host": [
+										"{{BASE_URL_BACKEND}}"
+									],
+									"path": [
+										"api",
+										"accounts",
+										"12345678909"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "access-control-allow-origin",
+									"value": "*"
+								},
+								{
+									"key": "access-control-allow-methods",
+									"value": "*"
+								},
+								{
+									"key": "access-control-allow-headers",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "177"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"b1-eijRkXRGRMEm2fZ43Zp45dTMq8o\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 11 Mar 2024 23:31:58 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"name\": \"FIAP\",\n    \"cpf\": \"12345678909\",\n    \"email\": \"fiap@fiap.com\",\n    \"password\": \"$2b$12$KDCYnQAg5V4j2LXLyRwANO1lnctF9bVpu5qDjmzu1ZhNWynzsc.oK\",\n    \"role\": null,\n    \"id\": \"65ef91839f5f8b80ef6ee72d\"\n}"
+						},
+						{
+							"name": "404 Not Found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL_BACKEND}}/api/accounts/1234567890",
+									"host": [
+										"{{BASE_URL_BACKEND}}"
+									],
+									"path": [
+										"api",
+										"accounts",
+										"1234567890"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "access-control-allow-origin",
+									"value": "*"
+								},
+								{
+									"key": "access-control-allow-methods",
+									"value": "*"
+								},
+								{
+									"key": "access-control-allow-headers",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "21"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"15-5KajTCx0AJD0xogoSeOjjV2M8K0\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 11 Mar 2024 23:32:46 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": \"Not Found\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Login",
+			"item": [
+				{
+					"name": "[ADMIN] SignUp",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const responseJson  = pm.response.json()",
+									"const access_token  = responseJson.access_token",
+									"",
+									"pm.environment.set(\"TOKEN_BACKEND\", access_token)"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"ADMIN\",\n    \"cpf\": \"123.456.789-09\",\n    \"email\": \"admin@admin.com\",\n    \"password\": \"123\",\n    \"passwordConfirmation\": \"123\",\n    \"role\": \"admin\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL_BACKEND}}/api/signup",
+							"host": [
+								"{{BASE_URL_BACKEND}}"
+							],
+							"path": [
+								"api",
+								"signup"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"ADMIN\",\n    \"cpf\": \"123.456.789-09\",\n    \"email\": \"admin@admin.com\",\n    \"password\": \"123\",\n    \"passwordConfirmation\": \"123\",\n    \"role\": \"admin\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL_BACKEND}}/api/signup",
+									"host": [
+										"{{BASE_URL_BACKEND}}"
+									],
+									"path": [
+										"api",
+										"signup"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "access-control-allow-origin",
+									"value": "*"
+								},
+								{
+									"key": "access-control-allow-methods",
+									"value": "*"
+								},
+								{
+									"key": "access-control-allow-headers",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "190"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"be-4mMFdVv8Tqjo0mAOynNyXcUst30\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 11 Mar 2024 23:23:27 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"access_token\": \"access_token\"\n}"
+						},
+						{
+							"name": "403 Forbidden",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"ADMIN\",\n    \"cpf\": \"123.456.789-09\",\n    \"email\": \"admin@admin.com\",\n    \"password\": \"123\",\n    \"passwordConfirmation\": \"123\",\n    \"role\": \"admin\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL_BACKEND}}/api/signup",
+									"host": [
+										"{{BASE_URL_BACKEND}}"
+									],
+									"path": [
+										"api",
+										"signup"
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "access-control-allow-origin",
+									"value": "*"
+								},
+								{
+									"key": "access-control-allow-methods",
+									"value": "*"
+								},
+								{
+									"key": "access-control-allow-headers",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "48"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"30-r5izlbymrOWYq1MCmf5aLNlreVM\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 11 Mar 2024 23:24:26 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": \"The received email is already in use\"\n}"
+						},
+						{
+							"name": "400 Bad Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"ADMIN\",\n    \"cpf\": \"123.456.789-09\",\n    \"email\": \"admin@admin.com\",\n    \"password\": \"123\",\n    \"role\": \"admin\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL_BACKEND}}/api/signup",
+									"host": [
+										"{{BASE_URL_BACKEND}}"
+									],
+									"path": [
+										"api",
+										"signup"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "access-control-allow-origin",
+									"value": "*"
+								},
+								{
+									"key": "access-control-allow-methods",
+									"value": "*"
+								},
+								{
+									"key": "access-control-allow-headers",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "47"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2f-mvyEStbRVIwalQ9n1p1zBPQRkOk\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 11 Mar 2024 23:25:35 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": \"Missing param: passwordConfirmation\"\n}"
+						}
+					]
+				},
+				{
+					"name": "SignUp",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const responseJson  = pm.response.json()",
+									"const access_token  = responseJson.access_token",
+									"",
+									"pm.environment.set(\"TOKEN_BACKEND\", access_token)"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"FIAP\",\n    \"cpf\": \"123.456.789-09\",\n    \"email\": \"fiap@fiap.com\",\n    \"password\": \"123\",\n    \"passwordConfirmation\": \"123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL_BACKEND}}/api/signup",
+							"host": [
+								"{{BASE_URL_BACKEND}}"
+							],
+							"path": [
+								"api",
+								"signup"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"FIAP\",\n    \"cpf\": \"123.456.789-09\",\n    \"email\": \"fiap@fiap.com\",\n    \"password\": \"123\",\n    \"passwordConfirmation\": \"123\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL_BACKEND}}/api/signup",
+									"host": [
+										"{{BASE_URL_BACKEND}}"
+									],
+									"path": [
+										"api",
+										"signup"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "access-control-allow-origin",
+									"value": "*"
+								},
+								{
+									"key": "access-control-allow-methods",
+									"value": "*"
+								},
+								{
+									"key": "access-control-allow-headers",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "190"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"be-gYMAuZGxZYmsYwZKHH7jC1qlG1U\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 11 Mar 2024 23:19:32 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"access_token\": \"access_token\"\n}"
+						},
+						{
+							"name": "403 Forbidden",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"FIAP\",\n    \"cpf\": \"123.456.789-09\",\n    \"email\": \"fiap@fiap.com\",\n    \"password\": \"123\",\n    \"passwordConfirmation\": \"123\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL_BACKEND}}/api/signup",
+									"host": [
+										"{{BASE_URL_BACKEND}}"
+									],
+									"path": [
+										"api",
+										"signup"
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "access-control-allow-origin",
+									"value": "*"
+								},
+								{
+									"key": "access-control-allow-methods",
+									"value": "*"
+								},
+								{
+									"key": "access-control-allow-headers",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "48"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"30-r5izlbymrOWYq1MCmf5aLNlreVM\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 11 Mar 2024 23:20:05 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": \"The received email is already in use\"\n}"
+						},
+						{
+							"name": "400 Bad Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"FIAP\",\n    \"cpf\": \"123.456.789-09\",\n    \"email\": \"fiap@fiap.com\",\n    \"password\": \"123\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL_BACKEND}}/api/signup",
+									"host": [
+										"{{BASE_URL_BACKEND}}"
+									],
+									"path": [
+										"api",
+										"signup"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "access-control-allow-origin",
+									"value": "*"
+								},
+								{
+									"key": "access-control-allow-methods",
+									"value": "*"
+								},
+								{
+									"key": "access-control-allow-headers",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "47"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2f-mvyEStbRVIwalQ9n1p1zBPQRkOk\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 11 Mar 2024 23:20:50 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": \"Missing param: passwordConfirmation\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const responseJson  = pm.response.json()",
+									"const access_token  = responseJson.access_token",
+									"",
+									"pm.environment.set(\"TOKEN_BACKEND\", access_token)"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"fiap@fiap.com\",\n    \"password\": \"123\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL_BACKEND}}/api/login",
+							"host": [
+								"{{BASE_URL_BACKEND}}"
+							],
+							"path": [
+								"api",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"fiap@fiap.com\",\n    \"password\": \"123\"\n}\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL_BACKEND}}/api/login",
+									"host": [
+										"{{BASE_URL_BACKEND}}"
+									],
+									"path": [
+										"api",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "access-control-allow-origin",
+									"value": "*"
+								},
+								{
+									"key": "access-control-allow-methods",
+									"value": "*"
+								},
+								{
+									"key": "access-control-allow-headers",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "190"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"be-93sC/rfgUPi5TwIAI+vmHh//G0A\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 11 Mar 2024 23:25:59 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"access_token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ZWY5MTgzOWY1ZjhiODBlZjZlZTcyZCIsImlhdCI6MTcxMDE5OTU1OCwiZXhwIjoxNzEwMjAxMzU4fQ.7SdLncT6hXc0v3H9sSHHv6t_q5mMNxx-7gebnoyztzw\"\n}"
+						},
+						{
+							"name": "400 Bad Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"fiap@fiap.com\"\n}\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL_BACKEND}}/api/login",
+									"host": [
+										"{{BASE_URL_BACKEND}}"
+									],
+									"path": [
+										"api",
+										"login"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "access-control-allow-origin",
+									"value": "*"
+								},
+								{
+									"key": "access-control-allow-methods",
+									"value": "*"
+								},
+								{
+									"key": "access-control-allow-headers",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "35"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"23-+4YMTdI+KBAH/CHqQkUYaTvBX24\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 11 Mar 2024 23:26:27 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": \"Missing param: password\"\n}"
+						},
+						{
+							"name": "401 Unauthorized",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"fiap@fiap.com\",\n    \"password\": \"a\"\n}\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL_BACKEND}}/api/login",
+									"host": [
+										"{{BASE_URL_BACKEND}}"
+									],
+									"path": [
+										"api",
+										"login"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "access-control-allow-origin",
+									"value": "*"
+								},
+								{
+									"key": "access-control-allow-methods",
+									"value": "*"
+								},
+								{
+									"key": "access-control-allow-headers",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "24"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"18-XPDV80vbMk4yY1/PADG4jYM4rSI\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 11 Mar 2024 23:26:49 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": \"Unauthorized\"\n}"
+						}
+					]
+				},
+				{
+					"name": "[ADMIN] Login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const responseJson  = pm.response.json()",
+									"const access_token  = responseJson.access_token",
+									"",
+									"pm.environment.set(\"TOKEN_BACKEND\", access_token)"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"admin@admin.com\",\n    \"password\": \"123\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL_BACKEND}}/api/login",
+							"host": [
+								"{{BASE_URL_BACKEND}}"
+							],
+							"path": [
+								"api",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"fiap@fiap.com\",\n    \"password\": \"123\"\n}\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL_BACKEND}}/api/login",
+									"host": [
+										"{{BASE_URL_BACKEND}}"
+									],
+									"path": [
+										"api",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "access-control-allow-origin",
+									"value": "*"
+								},
+								{
+									"key": "access-control-allow-methods",
+									"value": "*"
+								},
+								{
+									"key": "access-control-allow-headers",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "190"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"be-93sC/rfgUPi5TwIAI+vmHh//G0A\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 11 Mar 2024 23:25:59 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"access_token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ZWY5MTgzOWY1ZjhiODBlZjZlZTcyZCIsImlhdCI6MTcxMDE5OTU1OCwiZXhwIjoxNzEwMjAxMzU4fQ.7SdLncT6hXc0v3H9sSHHv6t_q5mMNxx-7gebnoyztzw\"\n}"
+						},
+						{
+							"name": "400 Bad Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"fiap@fiap.com\"\n}\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL_BACKEND}}/api/login",
+									"host": [
+										"{{BASE_URL_BACKEND}}"
+									],
+									"path": [
+										"api",
+										"login"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "access-control-allow-origin",
+									"value": "*"
+								},
+								{
+									"key": "access-control-allow-methods",
+									"value": "*"
+								},
+								{
+									"key": "access-control-allow-headers",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "35"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"23-+4YMTdI+KBAH/CHqQkUYaTvBX24\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 11 Mar 2024 23:26:27 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": \"Missing param: password\"\n}"
+						},
+						{
+							"name": "401 Unauthorized",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"fiap@fiap.com\",\n    \"password\": \"a\"\n}\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL_BACKEND}}/api/login",
+									"host": [
+										"{{BASE_URL_BACKEND}}"
+									],
+									"path": [
+										"api",
+										"login"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "access-control-allow-origin",
+									"value": "*"
+								},
+								{
+									"key": "access-control-allow-methods",
+									"value": "*"
+								},
+								{
+									"key": "access-control-allow-headers",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "24"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"18-XPDV80vbMk4yY1/PADG4jYM4rSI\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 11 Mar 2024 23:26:49 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": \"Unauthorized\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Logout",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN_BACKEND}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n   \"email\": \"fiap@fiap.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL_BACKEND}}/api/Logout",
+							"host": [
+								"{{BASE_URL_BACKEND}}"
+							],
+							"path": [
+								"api",
+								"Logout"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "204 No Content",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n   \"email\": \"fiap@fiap.com\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL_BACKEND}}/api/Logout",
+									"host": [
+										"{{BASE_URL_BACKEND}}"
+									],
+									"path": [
+										"api",
+										"Logout"
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "access-control-allow-origin",
+									"value": "*"
+								},
+								{
+									"key": "access-control-allow-methods",
+									"value": "*"
+								},
+								{
+									"key": "access-control-allow-headers",
+									"value": "*"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"4-K+iMpCQsduglOsYkdIUQZQMtaDM\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 11 Mar 2024 23:27:37 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": null
+						},
+						{
+							"name": "403 Forbidden",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n   \"email\": \"fiap@fap.com\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL_BACKEND}}/api/Logout",
+									"host": [
+										"{{BASE_URL_BACKEND}}"
+									],
+									"path": [
+										"api",
+										"Logout"
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "access-control-allow-origin",
+									"value": "*"
+								},
+								{
+									"key": "access-control-allow-methods",
+									"value": "*"
+								},
+								{
+									"key": "access-control-allow-headers",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "25"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"19-nRBdNN7VR55ywS/Y/sX+OwqwXgk\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 11 Mar 2024 23:28:07 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": \"Access denied\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Order",
+			"item": [
+				{
+					"name": "Create Order",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN_BACKEND}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"customer\": \"fiap\",\n    \"products\": [\n        {\n            \"id\": \"65aa013deca75aaae89c3a1b\",\n            \"totalItems\": 3,\n            \"unitPrice\": 2000,\n            \"amount\": 4000\n        }\n    ],\n    \"status\": \"Recebido\",\n    \"amount\": 6000\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL_BACKEND}}/api/orders",
+							"host": [
+								"{{BASE_URL_BACKEND}}"
+							],
+							"path": [
+								"api",
+								"orders"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"customer\": \"fiap\",\n    \"products\": [\n        {\n            \"id\": \"65aa013deca75aaae89c3a1b\",\n            \"totalItems\": 3,\n            \"unitPrice\": 2000,\n            \"amount\": 4000\n        }\n    ],\n    \"status\": \"Recebido\",\n    \"amount\": 6000\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL_BACKEND}}/api/orders",
+									"host": [
+										"{{BASE_URL_BACKEND}}"
+									],
+									"path": [
+										"api",
+										"orders"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "access-control-allow-origin",
+									"value": "*"
+								},
+								{
+									"key": "access-control-allow-methods",
+									"value": "*"
+								},
+								{
+									"key": "access-control-allow-headers",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "17"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"11-cxJKoqsC2svuL8X0vEqeY19cDtM\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 11 Mar 2024 23:37:43 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": \"F12343\"\n}"
+						},
+						{
+							"name": "400 Bad Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"customer\": \"fiap\",\n    \"status\": \"Recebido\",\n    \"amount\": 6000\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL_BACKEND}}/api/orders",
+									"host": [
+										"{{BASE_URL_BACKEND}}"
+									],
+									"path": [
+										"api",
+										"orders"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "access-control-allow-origin",
+									"value": "*"
+								},
+								{
+									"key": "access-control-allow-methods",
+									"value": "*"
+								},
+								{
+									"key": "access-control-allow-headers",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "35"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"23-8Q8OnXcijrsX4kylWJwx8gOZXGE\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 11 Mar 2024 23:38:07 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": \"Missing param: products\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Load Orders [Able to query]]",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN_BACKEND}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL_BACKEND}}/api/orders?code=N51447",
+							"host": [
+								"{{BASE_URL_BACKEND}}"
+							],
+							"path": [
+								"api",
+								"orders"
+							],
+							"query": [
+								{
+									"key": "code",
+									"value": "N51447"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL_BACKEND}}/api/orders?code=N51447",
+									"host": [
+										"{{BASE_URL_BACKEND}}"
+									],
+									"path": [
+										"api",
+										"orders"
+									],
+									"query": [
+										{
+											"key": "code",
+											"value": "N51447"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "access-control-allow-origin",
+									"value": "*"
+								},
+								{
+									"key": "access-control-allow-methods",
+									"value": "*"
+								},
+								{
+									"key": "access-control-allow-headers",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "395"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"18b-dIGVqSINh/zxiECk2V075f+BvxI\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 11 Mar 2024 23:35:25 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"code\": \"N51447\",\n        \"createdAt\": 1709657086736,\n        \"customer\": \"fiap\",\n        \"status\": \"Recebido\",\n        \"amount\": 11000,\n        \"payment\": \"Pendente\",\n        \"items\": [\n            {\n                \"orderId\": \"65e74bfec360df42c2f5be84\",\n                \"id\": \"65aa013deca75aaae89c3a1b\",\n                \"totalItems\": 2,\n                \"unitPrice\": 2000,\n                \"amount\": 4000\n            },\n            {\n                \"orderId\": \"65e74bfec360df42c2f5be84\",\n                \"id\": \"65aa013deca75aaae89c3a1c\",\n                \"totalItems\": 3,\n                \"unitPrice\": 6000,\n                \"amount\": 7000\n            }\n        ],\n        \"id\": \"65e74bfec360df42c2f5be84\"\n    }\n]"
+						},
+						{
+							"name": "204 No Content",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL_BACKEND}}/api/orders?code=N5144",
+									"host": [
+										"{{BASE_URL_BACKEND}}"
+									],
+									"path": [
+										"api",
+										"orders"
+									],
+									"query": [
+										{
+											"key": "code",
+											"value": "N5144"
+										}
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "access-control-allow-origin",
+									"value": "*"
+								},
+								{
+									"key": "access-control-allow-methods",
+									"value": "*"
+								},
+								{
+									"key": "access-control-allow-headers",
+									"value": "*"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"4-K+iMpCQsduglOsYkdIUQZQMtaDM\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 11 Mar 2024 23:36:24 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "[ADMIN] Update Order",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN_BACKEND}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \"status\": \"Recebido\" }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL_BACKEND}}/api/orders/N51447",
+							"host": [
+								"{{BASE_URL_BACKEND}}"
+							],
+							"path": [
+								"api",
+								"orders",
+								"N51447"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "204 No Content",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{ \"status\": \"Recebido\" }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL_BACKEND}}/api/orders/N51447",
+									"host": [
+										"{{BASE_URL_BACKEND}}"
+									],
+									"path": [
+										"api",
+										"orders",
+										"N51447"
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "access-control-allow-origin",
+									"value": "*"
+								},
+								{
+									"key": "access-control-allow-methods",
+									"value": "*"
+								},
+								{
+									"key": "access-control-allow-headers",
+									"value": "*"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"4-K+iMpCQsduglOsYkdIUQZQMtaDM\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 11 Mar 2024 23:39:16 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": null
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Products",
+			"item": [
+				{
+					"name": "Load Products",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN_BACKEND}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL_BACKEND}}/api/products",
+							"host": [
+								"{{BASE_URL_BACKEND}}"
+							],
+							"path": [
+								"api",
+								"products"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL_BACKEND}}/api/products",
+									"host": [
+										"{{BASE_URL_BACKEND}}"
+									],
+									"path": [
+										"api",
+										"products"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "access-control-allow-origin",
+									"value": "*"
+								},
+								{
+									"key": "access-control-allow-methods",
+									"value": "*"
+								},
+								{
+									"key": "access-control-allow-headers",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "2429"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"97d-udWA92Wau3QF9oVsFsouNsJgaP0\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 11 Mar 2024 23:43:37 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"category\": \"Beverage\",\n        \"name\": \"Aqua Floyd Elixir\",\n        \"price\": \"52.49\",\n        \"description\": \"A fizzy elixir that echoes the psychedelic vibes of Pink Floyd.\",\n        \"image\": \"aqua_floyd_elixir_image_url\",\n        \"id\": \"65aa013deca75aaae89c3a1b\"\n    },\n    {\n        \"category\": \"Appetizer\",\n        \"name\": \"Guns 'n' Roses Fries Extravaganza\",\n        \"price\": \"63.49\",\n        \"description\": \"Fries with an appetite for destruction, inspired by Guns 'n' Roses.\",\n        \"image\": \"guns_n_roses_fries_image_url\",\n        \"id\": \"65aa014aeca75aaae89c3a1c\"\n    },\n    {\n        \"category\": \"Appetizer\",\n        \"name\": \"Guns 'n' Roses Fries Extravaganza\",\n        \"price\": \"63.99\",\n        \"description\": \"Fries with an appetite for destruction, inspired by Guns 'n' Roses.\",\n        \"image\": \"guns_n_roses_fries_image_url\",\n        \"id\": \"65ade914956127dcba30d95c\"\n    },\n    {\n        \"category\": \"Appetizer\",\n        \"name\": \"Guns 'n' Roses Fries Extravaganza\",\n        \"price\": \"63.49\",\n        \"description\": \"Fries with an appetite for destruction, inspired by Guns 'n' Roses.\",\n        \"image\": \"guns_n_roses_fries_image_url\",\n        \"id\": \"65b31dc73eab5bffb769b9db\"\n    },\n    {\n        \"category\": \"Appetizer\",\n        \"name\": \"Guns 'n' Roses Fries Extravaganza\",\n        \"price\": \"63.49\",\n        \"description\": \"Fries with an appetite for destruction, inspired by Guns 'n' Roses.\",\n        \"image\": \"guns_n_roses_fries_image_url\",\n        \"id\": \"65b7d204a3dad52d9621ec8e\"\n    },\n    {\n        \"category\": \"Appetizer\",\n        \"name\": \"Guns 'n' Roses Fries Extravaganza\",\n        \"price\": \"63.49\",\n        \"description\": \"Fries with an appetite for destruction, inspired by Guns 'n' Roses.\",\n        \"image\": \"guns_n_roses_fries_image_url\",\n        \"id\": \"65b84a8b110a7e3f1dfb6931\"\n    },\n    {\n        \"category\": \"Appetizer\",\n        \"name\": \"Guns 'n' Roses Fries Extravaganza\",\n        \"price\": \"63.49\",\n        \"description\": \"Fries with an appetite for destruction, inspired by Guns 'n' Roses.\",\n        \"image\": \"guns_n_roses_fries_image_url\",\n        \"id\": \"65b856599c7c3bcd1d08a524\"\n    },\n    {\n        \"category\": \"Accompaniment\",\n        \"name\": \"Zesty Nacho Avalanche\",\n        \"price\": \"29.99\",\n        \"description\": \"A mountain of nachos showered in zesty flavors for the ultimate crunch experience.\",\n        \"image\": \"zesty_nacho_avalanche_image_url\",\n        \"id\": \"65b85769c1c9bf66c27cd590\"\n    },\n    {\n        \"category\": \"Snack\",\n        \"name\": \"Mystic Popcorn Fusion\",\n        \"price\": \"18.50\",\n        \"description\": \"Popcorn infused with mysterious flavors, creating a fusion of taste that will keep you craving for more.\",\n        \"image\": \"mystic_popcorn_fusion_image_url\",\n        \"id\": \"65b85770c1c9bf66c27cd591\"\n    },\n    {\n        \"category\": \"Snack\",\n        \"name\": \"Mystic Popcorn Fusion 2\",\n        \"price\": \"18.50\",\n        \"description\": \"Popcorn infused with mysterious flavors, creating a fusion of taste that will keep you craving for more.\",\n        \"image\": \"mystic_popcorn_fusion_image_url\",\n        \"id\": \"65b8586cc1c9bf66c27cd594\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "[ADM] Add Products",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN_BACKEND}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"category\": \"Snack\",\n    \"name\": \"Mystic Popcorn Fusion 2\",\n    \"price\": \"18.50\",\n    \"description\": \"Popcorn infused with mysterious flavors, creating a fusion of taste that will keep you craving for more.\",\n    \"image\": \"mystic_popcorn_fusion_image_url\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL_BACKEND}}/api/products",
+							"host": [
+								"{{BASE_URL_BACKEND}}"
+							],
+							"path": [
+								"api",
+								"products"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "204 No Content",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"category\": \"Snack\",\n    \"name\": \"TESTE\",\n    \"price\": \"18.50\",\n    \"description\": \"Popcorn infused with mysterious flavors, creating a fusion of taste that will keep you craving for more.\",\n    \"image\": \"mystic_popcorn_fusion_image_url\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL_BACKEND}}/api/products",
+									"host": [
+										"{{BASE_URL_BACKEND}}"
+									],
+									"path": [
+										"api",
+										"products"
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "access-control-allow-origin",
+									"value": "*"
+								},
+								{
+									"key": "access-control-allow-methods",
+									"value": "*"
+								},
+								{
+									"key": "access-control-allow-headers",
+									"value": "*"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"4-K+iMpCQsduglOsYkdIUQZQMtaDM\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 11 Mar 2024 23:44:20 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "[ADM] Update Product",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN_BACKEND}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"category\": \"Appetizer\",\n    \"name\": \"Guns 'n' Roses Fries Extravaganza\",\n    \"price\": \"63.99\",\n    \"description\": \"Fries with an appetite for destruction, inspired by Guns 'n' Roses.\",\n    \"image\": \"guns_n_roses_fries_image_url\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL_BACKEND}}/api/products/65ade914956127dcba30d95c",
+							"host": [
+								"{{BASE_URL_BACKEND}}"
+							],
+							"path": [
+								"api",
+								"products",
+								"65ade914956127dcba30d95c"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "204 No Content",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"category\": \"Appetizer\",\n    \"name\": \"Guns 'n' Roses Fries Extravaganza\",\n    \"price\": \"63.99\",\n    \"description\": \"Fries with an appetite for destruction, inspired by Guns 'n' Roses.\",\n    \"image\": \"guns_n_roses_fries_image_url\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL_BACKEND}}/api/products/65ade914956127dcba30d95c",
+									"host": [
+										"{{BASE_URL_BACKEND}}"
+									],
+									"path": [
+										"api",
+										"products",
+										"65ade914956127dcba30d95c"
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "access-control-allow-origin",
+									"value": "*"
+								},
+								{
+									"key": "access-control-allow-methods",
+									"value": "*"
+								},
+								{
+									"key": "access-control-allow-headers",
+									"value": "*"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"4-K+iMpCQsduglOsYkdIUQZQMtaDM\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 11 Mar 2024 23:45:05 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "[ADM] Delete Product",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN_BACKEND}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL_BACKEND}}/api/products/65abfbebf159756af802edb0",
+							"host": [
+								"{{BASE_URL_BACKEND}}"
+							],
+							"path": [
+								"api",
+								"products",
+								"65abfbebf159756af802edb0"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "204 No Content",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL_BACKEND}}/api/products/65abfbebf159756af802edb0",
+									"host": [
+										"{{BASE_URL_BACKEND}}"
+									],
+									"path": [
+										"api",
+										"products",
+										"65abfbebf159756af802edb0"
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "access-control-allow-origin",
+									"value": "*"
+								},
+								{
+									"key": "access-control-allow-methods",
+									"value": "*"
+								},
+								{
+									"key": "access-control-allow-headers",
+									"value": "*"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"4-K+iMpCQsduglOsYkdIUQZQMtaDM\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 11 Mar 2024 23:45:29 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": null
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Health",
+			"item": [
+				{
+					"name": "Health",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN_BACKEND}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL_BACKEND}}/api/health",
+							"host": [
+								"{{BASE_URL_BACKEND}}"
+							],
+							"path": [
+								"api",
+								"health"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL_BACKEND}}/api/health",
+									"host": [
+										"{{BASE_URL_BACKEND}}"
+									],
+									"path": [
+										"api",
+										"health"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "access-control-allow-origin",
+									"value": "*"
+								},
+								{
+									"key": "access-control-allow-methods",
+									"value": "*"
+								},
+								{
+									"key": "access-control-allow-headers",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "2"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2-vyGp6PvFo4RvsFtPoIWeCReyIC8\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 11 Mar 2024 23:45:47 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{}"
+						}
+					]
+				}
+			]
+		}
+	]
+}
