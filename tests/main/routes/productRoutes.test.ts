@@ -59,8 +59,8 @@ describe('Product Routes', () => {
 
     test('Should return 403 on load products without accessToken', async () => {
       const reponse = await accountCollection.insertOne({
-        name: 'Gabriel',
-        email: 'gabriel.rodrigues@gmail.com',
+        name: 'MOCK',
+        email: 'mock@mock.com',
         password: 123,
         role: 'admin'
       })
@@ -81,8 +81,8 @@ describe('Product Routes', () => {
 
     test('Should return 200 on load products without accessToken', async () => {
       const reponse = await accountCollection.insertOne({
-        name: 'Gabriel',
-        email: 'gabriel.rodrigues@gmail.com',
+        name: 'MOCK',
+        email: 'mock@mock.com',
         password: 123,
         role: 'admin'
       })
@@ -112,8 +112,8 @@ describe('Product Routes', () => {
 
     test('Should return 200 on load products with accessToken', async () => {
       const reponse = await accountCollection.insertOne({
-        name: 'Gabriel',
-        email: 'gabriel.rodrigues@gmail.com',
+        name: 'MOCK',
+        email: 'mock@mock.com',
         password: 123,
         role: 'admin'
       })
@@ -145,8 +145,8 @@ describe('Product Routes', () => {
 
     test('Should return 204 on add product usign valid accessToken', async () => {
       const reponse = await accountCollection.insertOne({
-        name: 'Gabriel',
-        email: 'gabriel.rodrigues@gmail.com',
+        name: 'MOCK',
+        email: 'mock@mock.com',
         password: 123,
         role: 'admin'
       })
@@ -176,8 +176,8 @@ describe('Product Routes', () => {
 
     test('Should return 204 on delete product usign valid accessToken', async () => {
       const reponse = await accountCollection.insertOne({
-        name: 'Gabriel',
-        email: 'gabriel.rodrigues@gmail.com',
+        name: 'MOCK',
+        email: 'mock@mock.com',
         password: 123,
         role: 'admin'
       })
@@ -210,8 +210,8 @@ describe('Product Routes', () => {
 
     test('Should return 204 on update product usign valid accessToken', async () => {
       const reponse = await accountCollection.insertOne({
-        name: 'Gabriel',
-        email: 'gabriel.rodrigues@gmail.com',
+        name: 'MOCK',
+        email: 'mock@mock.com',
         password: 123,
         role: 'admin'
       })

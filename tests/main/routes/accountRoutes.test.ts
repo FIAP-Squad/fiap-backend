@@ -42,8 +42,8 @@ describe('Login Routes', () => {
 
     test('Should return 200 on load account with accessToken', async () => {
       const reponse = await accountCollection.insertOne({
-        name: 'Gabriel',
-        email: 'gabriel.rodrigues@gmail.com',
+        name: 'MOCK',
+        email: 'mock@mock.com',
         cpf: '12345678909',
         password: 123,
         role: 'admin'
