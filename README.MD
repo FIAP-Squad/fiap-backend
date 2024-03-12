@@ -70,6 +70,8 @@ Arquitetura dos recursos utilizados para a hospedagem do projeto, atendendo os r
 
 Vídeo de demonstração da arquitetura: https://www.youtube.com/watch?v=vBWGeD4QASE
 
+Endpoint para acessar a aplicação: http://a3ab51859a0754518af906af3da1274e-2042224407.us-east-1.elb.amazonaws.com
+
 #### Identificação e autenticação
 ##### Autenticação do usuário
 Os usuários devem ser capazes de se autenticarem no sistema através de usuário e senha.
