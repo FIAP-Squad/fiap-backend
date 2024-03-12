@@ -70,7 +70,7 @@ Arquitetura dos recursos utilizados para a hospedagem do projeto, atendendo os r
 
 Vídeo de demonstração da arquitetura: https://www.youtube.com/watch?v=vBWGeD4QASE
 
-Endpoint para acessar a aplicação: http://a3ab51859a0754518af906af3da1274e-2042224407.us-east-1.elb.amazonaws.com
+Endpoint para acessar a aplicação: http://a3ab51859a0754518af906af3da1274e-2042224407.us-east-1.elb.amazonaws.com (Acesse ./collection para ter acesso a collection em formato JSON e aos ambientes local e produtivo)
 
 #### Identificação e autenticação
 ##### Autenticação do usuário
@@ -152,10 +152,37 @@ Os usuários funcionários devem ser capazes de alterar o status do pedido na fi
     - npm run up:locally - Realiza o build da imagem antes de executar
     - npm run up - Apenas executa a aplicação em Docker
     
-### Execute os testes
+### Execute os testes unitários e de integração
     - npm run test - Executa todos os testes
     - npm run test:unit - Executa testes unitários
     - npm run test:integration - Executa testes de integração
+
+### Execute os testes funcionais
+- A collection está preparada para trabalhar o access_token via variável de ambiente
+- Há dois ambientes configurados: Development e Production - ambos presentes na pasta "collections"
+
+1.  Com a collection do projeto aberta, acesse a pasta "Login" e execute a request "SignUp" para criar seu usuário. A rota retornará o access_token, o armazenará em variável de ambiente e você já estará apto a realizar os próximos testes.
+
+2.  Para consultar os produtos disponíveis, acesse a pasta "Products" e execute a collection "Load Products". Essa rota pode ser executada com ou sem query params. ex: "?category=Beverage" ou "?name=Guns 'n' Roses Fries Extravaganza"
+
+3.  Acesse a pasta "Order" e execute a requisição "Create Order". Será retornado um campo "code", representando o código de seu pedido
+
+4.  Para consultar seu pedido execute a requisição "Load Orders" passando o query param "?code" com o código gerado no passo anterior
+
+5.  Por fim, atualize o status de preparação do pedido e também o status de pagamento acessando a rota "[ADMIN] Update Order". Para tal, você deverá realizar o processo de criação de um usuário administrador acessando a pasta Login e executando a requisição "[ADMIN] SignUp".
+  - Para alterar o status do pedido:
+    { "status": "{STATUS_DO_PEDIDO}" }  
+    - Os status de pedido disponíveis são: "Recebido", "Em Preparação" e "Finalizado"
+  - Para alterar o status do pagamento:
+    { "payment": "{STATUS_DO_PAGAMENTO}" }
+    - Os status de pagamento disponíveis são: "Pendente", "Aprovado" e "Recusado"
+6.  Ao alterar o status do pedido para "Finalizado", ele não será mais retornado na consulta de pedidos
+
+7.  Acesse a pasta "Login" e execute a requisição "Logout"
+
+8.  *Agora com seu usuário criado, você pode realizar o Login através da rota de Login
+
+9.  *É possível consultar um usuário pelo CPF acessando a pasta "Account" e executando a requisição "[ADMIN] Load Account By CFP" com path param
 
 ### Rotas
 
@@ -163,13 +190,14 @@ Os usuários funcionários devem ser capazes de alterar o status do pedido na fi
   - [GET] Health Check - Verifica a saúde da API
 
 #### Login
+  - [POST] [ADMIN] SignUp - Versão do administrador
+  - [POST]  [ADMIN] Login - Versão do administrador
   - [POST]  SignUp - Versão do cliente
-  - [POST]  SignUp - Versão do administrador
   - [POST]  Login
   - [POST]  Logout
 
 #### Accounts
-  - [GET] Consulta registro por CPF
+  - [GET] [ADMIN] Consulta registro por CPF
 
 #### Products
   - [GET] Consulta Produtos
@@ -184,4 +212,4 @@ Os usuários funcionários devem ser capazes de alterar o status do pedido na fi
     - Retorna todos os pedidos realizados
     - Habilitado para uso de query params
   - [POST]  Cria Pedido
-  - [PATCH] Atualiza Pedido
+  - [PATCH] [ADMIN] Atualiza Pedido
